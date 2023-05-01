@@ -1,4 +1,4 @@
-### Hi there 👋
+### Welcome to my page. I am a computer science PhD student.
 
 <!--
 **mkduong-ai/mkduong-ai** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
