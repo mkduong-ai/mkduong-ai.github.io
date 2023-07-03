@@ -1,10 +1,10 @@
 .text-stroke {
     color: white; /* Text color */
     text-shadow:
-        -1px -1px 0 rgba(0, 0, 0, 0.5),
-        1px -1px 0 rgba(0, 0, 0, 0.5),
-        -1px 1px 0 rgba(0, 0, 0, 0.5),
-        1px 1px 0 rgba(0, 0, 0, 0.5);
+        -1px -1px 0 rgba(0, 0, 0, 0.7),
+        1px -1px 0 rgba(0, 0, 0, 0.7),
+        -1px 1px 0 rgba(0, 0, 0, 0.7),
+        1px 1px 0 rgba(0, 0, 0, 0.7);
 }
 
 .btn-primary {
@@ -22,4 +22,8 @@
     --bs-btn-disabled-color: #ffffff;
     --bs-btn-disabled-bg: #2196F3;
     --bs-btn-disabled-border-color: #2196F3;
-    }
+}
+
+header.masthead {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)), url("../assets/img/header-bg.jpg");
+  }
