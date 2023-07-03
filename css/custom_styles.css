@@ -25,5 +25,6 @@
 }
 
 header.masthead {
+    padding-bottom: 6rem;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)), url("../assets/img/header-bg.jpg");
   }
