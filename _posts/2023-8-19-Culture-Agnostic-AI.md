@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: Cross-Cultural Ethical AI: Why We Need AI That Is Agnostic To Cultural Values
 ---
 
