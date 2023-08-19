@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Personal Blog &middot; Artificial Intelligence &middot; Machine Learning
+title: Personal Blog &middot; Machine Learning
 ---
 
 Welcome to my blog. I am Manh Khoi Duong and currently doing my PhD in
