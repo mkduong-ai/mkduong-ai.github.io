@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Cross-Cultural Ethical AI
+title: Cross-Cultural Ethical AI: Why AI Should Be Agnostic To Culture
 ---
 
 ## Why We Need AI That Is Agnostic To Cultural Values
