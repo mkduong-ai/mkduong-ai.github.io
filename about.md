@@ -4,12 +4,11 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
-
-### More Information
-
-A place to include any other types of information that you'd like to include about yourself.
+I am currently pursuing a PhD in Databases and Information Systems at the Heinrich Heine University in Düsseldorf, Germany.
+I work in a research project called RAPP which stands for Responsible Academic Performance Prediction.
+Within the RAPP project, my role encompasses not only development tasks but also coordination, management responsibilities, recruiting assistants, and engaging with stakeholders and data governors.
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+For business inquiries, potential collaborations in research, or any related discussions, contact me.
+[duong@hhu.de](mailto:duong@hhu.de)
