@@ -3,7 +3,11 @@ layout: post
 title: Cross-Cultural Ethical AI: Why We Need AI That Is Agnostic To Cultural Values
 ---
 
+Lorem Ipsum
+
 ### Introduction
+
+Lorem Ipsum
 
 ### Understanding Cultural Bias in AI
 
