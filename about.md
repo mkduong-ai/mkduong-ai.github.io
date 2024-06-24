@@ -5,8 +5,8 @@ permalink: /about/
 ---
 
 I am a PhD student in Machine Learning at the Heinrich Heine University Düsseldorf, Germany.
-Currently, I work as a teaching assistant for the courses "Knowledge Discovery in Databases" (Master) and "Databases: An
-Introduction" (Bachelor).
+Currently, I work as a teaching assistant for the courses "*Knowledge Discovery in Databases*" (Master) and "*Databases: An
+Introduction*" (Bachelor).
 In the past, I worked on an interdisciplinary research project called [RAPP](https://rapp.hhu.de/en/) which stands for *Responsible Academic Performance Prediction*.
 Within the RAPP project, I co-developed an [MLOps application](https://github.com/hhu-rapp/rapp-tool) and a [WebApp](https://github.com/hhu-rapp/rapp-webapp)
 for stakeholders in a team.
@@ -33,7 +33,6 @@ Also check out my repositories on mitigating bias ([FairDo](https://github.com/m
 - I participated in the [*Solve for Tomorrow*](https://app.ekipa.de/challenges/tech-for-future/timeline) challenge organized by **Samsung** and **ekipa** (2021). Out of hundreds of teams, we became one of the top 10 semi-finalists. We pitched our idea to use smartwatches to track biomarkers for predicting mental and physical health issues.
 - In 2016, I attempted to create a startup with some of my fellow students. Each of us developed Android games and we planned to monetize them using ads.
 - Participated in the math olympiad once but scored highest in my hometown (Krefeld, Germany) in 2015 when I did.
-- Completed a WISC test when I was a child. I was at the top 1-P(X<=x) = 0.6%.
 - I taught myself how to play the piano and guitar within several weeks. I play jazz, blues, and improvise a lot.
 - I can juggle and perform the simple cascade.
 - Quantitive analysis of stocks using machine learning is my part-time hobby.
