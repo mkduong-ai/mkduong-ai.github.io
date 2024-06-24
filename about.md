@@ -25,15 +25,21 @@ For more technical details, feel free to read my papers listed on [Google Schola
 Also check out my repositories on mitigating bias ([FairDo](https://github.com/mkduong-ai/fairdo)) and hyperparameter optimization ([grAdapt](https://github.com/mkduong-ai/grAdapt)).
 
 
-### Misc
+### Miscellaneous
 
 - I worked as a model in an american-vietnamese healthcare magazine for several years (2013+).
 - I was guest in a [german podcast](https://podcasters.spotify.com/pod/show/heicad/episodes/6-Wie-quantifiziert-man-eigentlich-Fairness--PhD-Pitches-e1qaqeh) where I talked about my research.
 - I participated in creating [instructional videos](https://www.youtube.com/watch?v=Kcp-VSZVGlA&t=515s) for an online course.
 - I participated in the [*Solve for Tomorrow*](https://app.ekipa.de/challenges/tech-for-future/timeline) challenge organized by **Samsung** and **ekipa** (2021). Out of hundreds of teams, we became one of the top 10 semi-finalists. We pitched our idea to use smartwatches to track biomarkers for predicting mental and physical health issues.
 - In 2016, I attempted to create a startup with some of my fellow students. Each of us developed Android games and we planned to monetize them using ads.
-- I only participated in the math olympiad once but scored highest in my hometown (Krefeld, Germany) in 2015 when I did.
-- I did an WISC test when I was a child. I was at the top 1-P(X<=x) = 0.6%.
+- Participated in the math olympiad once but scored highest in my hometown (Krefeld, Germany) in 2015 when I did.
+- Completed a WISC test when I was a child. I was at the top 1-P(X<=x) = 0.6%.
+- I taught myself how to play the piano and guitar within several weeks. I play jazz, blues, and improvise a lot.
+- I can juggle and perform the simple cascade.
+- Quantitive analysis of stocks using machine learning is my part-time hobby.
+- Personal trainer in a commercial gym.
+- Very interested in quantum computing and the optimization problems that can be solved more efficiently with it.
+- Been to over 20 countries. I am very open about learning the history and the culture of the country I travel to.
 
 ### Contact me
 
