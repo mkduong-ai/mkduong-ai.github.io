@@ -36,7 +36,7 @@ Having worked in several projects as a DevOps, MLOps Engineer, and Fullstack Dev
 - Frameworks for Web: Flask, Streamlit, Jekyll, MariaDB, SQLite, HTML, CSS, Javascript
 - Machine Learning: Fairness, Responsible AI, Differential Privacy, Boosting, Bagging, XGBoost, LightGBM, Stable Diffusion, LLMs, Generative Models, Neural Networks, Transformers, Autoregressive Models, GANs, Statistical Models, Traditional Machine Learning Models (SVM, K-NN, Logistic Regression), Genetic Algorithms, Hyperparameter Optimization, AutoML, Markov Models, Gaussian Process Regression, Gaussian Mixture Model, Clustering, DBScan
 - Python related: NumPy, SciPy, Numba, AIF360, Fairlearn, FairDo, Scikit-learn, Pandas, PyTorch, TensorFlow, Keras, CuPy (GPU), SymPy, PyQT5, Yfinance, Backtrader, NLTK, Spacy, PEP8 Style Guide, DocString, Read The Docs, PyPI packaging, venv, conda,  CLIP, Stable Diffusion, GPT4Free, Google Collab
-- Office: LaTeX, Word, Beamer, PowerPoint, Excel, LibreOffice, Draw, GIMP, Darktable, Inkscape, Draw.io
+- Office: LaTeX, Word, Beamer, PowerPoint, Excel, LibreOffice, Markdown, Draw, GIMP, Darktable, Inkscape, Draw.io
 - Others: Android Programming (Java), Game Development, Physics Simulations, ComfyUI
 
 ### Miscellaneous
