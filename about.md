@@ -28,7 +28,7 @@ Also check out my repositories on mitigating bias ([FairDo](https://github.com/m
 
 ### Work Experience
 
-Having worked in several projects as a DevOps, MLOps Engineer, and Fullstack Developer, I gained lots of experiences working with various frameworks. Here is a small excerpt of my skillset:
+Having worked in several projects as a DevOps, MLOps Engineer, and Fullstack Developer, I gained lots of experience working with various frameworks. Here is a small excerpt of my skillset:
 
 - Projectmanagement: Agile, Waterfall, Scrum, Kanban Board, User Stories, Continuous Delivery, Backlog, Project Planning, Risk Management, Stakeholder Management, Financial Planing
 - Projectmanagement Software: Jira, Trello, Microsoft Teams, Rememberthemilk, Notion.so
