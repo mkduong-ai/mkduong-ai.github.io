@@ -41,7 +41,7 @@ Having worked in several projects as a DevOps, MLOps Engineer, and Fullstack Dev
 
 ### Miscellaneous
 
-- I started programming since I was seven years old in 2004. My first applications were *Java applets* and *Adobe Flash Games*.
+- I started programming since I was 7 years old in 2004. My first applications were *Java applets* and *Adobe Flash Games*.
 - I was guest in a [german podcast](https://podcasters.spotify.com/pod/show/heicad/episodes/6-Wie-quantifiziert-man-eigentlich-Fairness--PhD-Pitches-e1qaqeh) where I talked about my research.
 - I participated in creating [instructional videos](https://www.youtube.com/watch?v=Kcp-VSZVGlA&t=515s) for an online course.
 - I participated in the [*Solve for Tomorrow*](https://app.ekipa.de/challenges/tech-for-future/timeline) challenge organized by **Samsung** and **ekipa** (2021). Out of hundreds of teams, we became one of the top 10 semi-finalists. We pitched our idea to use smartwatches to track biomarkers for predicting mental and physical health issues.
