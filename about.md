@@ -8,7 +8,7 @@ I am a PhD student in Machine Learning at the Heinrich Heine University Düsseld
 Currently, I work as a teaching assistant for the courses "*Knowledge Discovery in Databases*" (Master) and "*Databases: An
 Introduction*" (Bachelor).
 In the past, I worked on an interdisciplinary research project called [RAPP](https://rapp.hhu.de/en/) which stands for *Responsible Academic Performance Prediction*.
-The project was funded by the [Federal Ministry of Education and Research (Germany)](https://www.wihoforschung.de/wihoforschung/de/bmbf-projektfoerderung/foerderlinien/forschung-zur-digitalen-hochschulbildung/vierte-foerderlinie-zur-digitalen-hochschulbildung/rapp/rapp.html) with €1,308,510 (approximately $1,576,702.21 USD as of March 1, 2021).
+The project was funded by the [Federal Ministry of Education and Research (Germany)](https://www.wihoforschung.de/wihoforschung/de/bmbf-projektfoerderung/foerderlinien/forschung-zur-digitalen-hochschulbildung/vierte-foerderlinie-zur-digitalen-hochschulbildung/rapp/rapp.html) with €1.308.510 (approximately $1.576.702,21 USD as of March 1, 2021).
 Within the RAPP project, I co-developed an [MLOps application](https://github.com/hhu-rapp/rapp-tool) and a [WebApp](https://github.com/hhu-rapp/rapp-webapp)
 for stakeholders in a team.
 In addition to development tasks, my role within the project encompassed coordination, management responsibilities, recruiting assistants,
