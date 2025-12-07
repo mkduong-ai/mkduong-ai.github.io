@@ -22,7 +22,7 @@ async function init() {
     await Promise.all([
         loadComponent('pages/hero.html', 'hero-section'),
         loadComponent('pages/about.html', 'about-section'),
-        loadComponent('pages/skills.html', 'skills-section'),
+        loadComponent('pages/experience.html', 'experience-section'),
         loadComponent('pages/projects.html', 'projects-section'),
         loadComponent('pages/blog.html', 'blog-section'),
         loadComponent('pages/contact.html', 'contact-section'),
@@ -32,6 +32,10 @@ async function init() {
     // Initialize modules after content is loaded
     initNavigation();
     initSmoothScroll();
+
+    // Initialize collapsible for work experience
+    const collapsibleElems = document.querySelectorAll('.collapsible');
+    M.Collapsible.init(collapsibleElems);
 }
 
 // Run when DOM is ready
