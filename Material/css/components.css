@@ -114,8 +114,8 @@
 }
 
 /* Footer */
-footer {
-    background-color: #263238;
+footer.page-footer {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
     color: white;
     padding: 40px 0 20px;
 }
