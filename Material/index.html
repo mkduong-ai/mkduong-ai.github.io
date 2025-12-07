@@ -1,112 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>John Doe - Machine Learning Engineer</title>
+
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Materialize CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <style>
-        :root {
-            --primary: #2196F3;
-            --primary-dark: #1976D2;
-            --secondary: #FF9800;
-            --text: #333;
-            --text-light: #666;
-            --background: #fafafa;
-        }
-        
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: var(--background);
-            color: var(--text);
-            line-height: 1.6;
-        }
-        
-        .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: white;
-            padding: 100px 0;
-            margin-bottom: 0;
-        }
-        
-        .hero h1 {
-            font-weight: 300;
-            margin-bottom: 20px;
-        }
-        
-        .hero .btn {
-            margin-top: 20px;
-        }
-        
-        .section {
-            padding: 80px 0;
-        }
-        
-        .card {
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-        }
-        
-        .skill-chip {
-            margin: 5px;
-            background-color: #e3f2fd;
-            color: var(--primary);
-        }
-        
-        .project-card .card-image {
-            height: 200px;
-            overflow: hidden;
-        }
-        
-        .project-card .card-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .blog-card {
-            height: 100%;
-        }
-        
-        .contact-icon {
-            font-size: 3rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-        
-        footer {
-            background-color: #263238;
-            color: white;
-            padding: 40px 0 20px;
-        }
-        
-        .nav-wrapper {
-            padding: 0 20px;
-        }
-        
-        @media (max-width: 600px) {
-            .hero {
-                padding: 60px 0;
-            }
-            
-            .section {
-                padding: 40px 0;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-        }
-    </style>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="white">
@@ -133,274 +45,19 @@
         <li><a href="#contact">Contact</a></li>
     </ul>
 
-    <!-- Hero Section -->
-    <div class="hero">
-        <div class="container">
-            <div class="row">
-                <div class="col s12 m8">
-                    <h1>John Doe</h1>
-                    <h4>Machine Learning Engineer</h4>
-                    <p class="flow-text">Transforming data into intelligent solutions through cutting-edge AI and machine learning.</p>
-                    <a href="#contact" class="btn-large waves-effect waves-light white blue-text">Get In Touch</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- About Section -->
-    <section id="about" class="section white">
-        <div class="container">
-            <div class="row">
-                <div class="col s12 m4">
-                    <h3>About Me</h3>
-                </div>
-                <div class="col s12 m8">
-                    <p class="flow-text">I'm a passionate Machine Learning Engineer with 5+ years of experience building and deploying scalable AI solutions. I specialize in deep learning, computer vision, and natural language processing.</p>
-                    <p>My expertise lies in taking machine learning models from research to production, ensuring they deliver real business value while maintaining high performance and reliability.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="section grey lighten-3">
-        <div class="container">
-            <h3 class="center-align">Technical Skills</h3>
-            <div class="row">
-                <!-- Programming Languages -->
-                <div class="col s12 m6 l4">
-                    <div class="card">
-                        <div class="card-content">
-                            <span class="card-title">Programming</span>
-                            <div class="chip skill-chip">Python</div>
-                            <div class="chip skill-chip">R</div>
-                            <div class="chip skill-chip">SQL</div>
-                            <div class="chip skill-chip">Java</div>
-                            <div class="chip skill-chip">C++</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- ML Frameworks -->
-                <div class="col s12 m6 l4">
-                    <div class="card">
-                        <div class="card-content">
-                            <span class="card-title">ML Frameworks</span>
-                            <div class="chip skill-chip">TensorFlow</div>
-                            <div class="chip skill-chip">PyTorch</div>
-                            <div class="chip skill-chip">Scikit-learn</div>
-                            <div class="chip skill-chip">Keras</div>
-                            <div class="chip skill-chip">Hugging Face</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Tools & Technologies -->
-                <div class="col s12 m6 l4">
-                    <div class="card">
-                        <div class="card-content">
-                            <span class="card-title">Tools & Cloud</span>
-                            <div class="chip skill-chip">Docker</div>
-                            <div class="chip skill-chip">Kubernetes</div>
-                            <div class="chip skill-chip">AWS</div>
-                            <div class="chip skill-chip">GCP</div>
-                            <div class="chip skill-chip">MLflow</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="section white">
-        <div class="container">
-            <h3 class="center-align">Featured Projects</h3>
-            <div class="row">
-                <!-- Project 1 -->
-                <div class="col s12 m6 l4">
-                    <div class="card project-card">
-                        <div class="card-image">
-                            <img src="https://via.placeholder.com/400x200/2196F3/ffffff?text=Computer+Vision" alt="Computer Vision Project">
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title">Real-time Object Detection</span>
-                            <p>Developed a YOLO-based object detection system achieving 95% accuracy with real-time processing capabilities.</p>
-                        </div>
-                        <div class="card-action">
-                            <a href="#" class="blue-text">View Details</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 2 -->
-                <div class="col s12 m6 l4">
-                    <div class="card project-card">
-                        <div class="card-image">
-                            <img src="https://via.placeholder.com/400x200/FF9800/ffffff?text=NLP" alt="NLP Project">
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title">Sentiment Analysis API</span>
-                            <p>Built a BERT-based sentiment analysis service processing 10K+ requests daily with 92% accuracy.</p>
-                        </div>
-                        <div class="card-action">
-                            <a href="#" class="blue-text">View Details</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 3 -->
-                <div class="col s12 m6 l4">
-                    <div class="card project-card">
-                        <div class="card-image">
-                            <img src="https://via.placeholder.com/400x200/4CAF50/ffffff?text=Recommendation" alt="Recommendation System">
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title">Recommendation Engine</span>
-                            <p>Created a collaborative filtering system that increased user engagement by 35% for an e-commerce platform.</p>
-                        </div>
-                        <div class="card-action">
-                            <a href="#" class="blue-text">View Details</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Blog Section -->
-    <section id="blog" class="section grey lighten-3">
-        <div class="container">
-            <h3 class="center-align">Latest Blog Posts</h3>
-            <div class="row">
-                <!-- Blog Post 1 -->
-                <div class="col s12 m6">
-                    <div class="card blog-card">
-                        <div class="card-content">
-                            <span class="card-title">Fine-tuning LLMs for Domain-specific Tasks</span>
-                            <p class="grey-text">March 15, 2024</p>
-                            <p>Exploring techniques for adapting large language models to specialized domains with limited data...</p>
-                        </div>
-                        <div class="card-action">
-                            <a href="#" class="blue-text">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Blog Post 2 -->
-                <div class="col s12 m6">
-                    <div class="card blog-card">
-                        <div class="card-content">
-                            <span class="card-title">ML Model Deployment Best Practices</span>
-                            <p class="grey-text">February 28, 2024</p>
-                            <p>A comprehensive guide to deploying machine learning models in production environments...</p>
-                        </div>
-                        <div class="card-action">
-                            <a href="#" class="blue-text">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section white">
-        <div class="container">
-            <h3 class="center-align">Get In Touch</h3>
-            <div class="row">
-                <div class="col s12 m8 offset-m2">
-                    <div class="card">
-                        <div class="card-content">
-                            <div class="row">
-                                <div class="col s12 m4 center-align">
-                                    <i class="material-icons contact-icon">email</i>
-                                    <p>john.doe@email.com</p>
-                                </div>
-                                <div class="col s12 m4 center-align">
-                                    <i class="material-icons contact-icon">phone</i>
-                                    <p>+1 (555) 123-4567</p>
-                                </div>
-                                <div class="col s12 m4 center-align">
-                                    <i class="material-icons contact-icon">location_on</i>
-                                    <p>San Francisco, CA</p>
-                                </div>
-                            </div>
-                            <form>
-                                <div class="row">
-                                    <div class="input-field col s12 m6">
-                                        <input id="name" type="text" class="validate">
-                                        <label for="name">Your Name</label>
-                                    </div>
-                                    <div class="input-field col s12 m6">
-                                        <input id="email" type="email" class="validate">
-                                        <label for="email">Your Email</label>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="input-field col s12">
-                                        <textarea id="message" class="materialize-textarea"></textarea>
-                                        <label for="message">Your Message</label>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col s12 center-align">
-                                        <button class="btn waves-effect waves-light blue" type="submit">
-                                            Send Message
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="page-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col s12 m6">
-                    <h5>John Doe</h5>
-                    <p>Machine Learning Engineer</p>
-                </div>
-                <div class="col s12 m4 offset-m2">
-                    <h5>Connect</h5>
-                    <ul>
-                        <li><a href="#" class="grey-text text-lighten-3">LinkedIn</a></li>
-                        <li><a href="#" class="grey-text text-lighten-3">GitHub</a></li>
-                        <li><a href="#" class="grey-text text-lighten-3">Twitter</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="footer-copyright">
-            <div class="container">
-                © 2024 John Doe
-            </div>
-        </div>
-    </footer>
+    <!-- Page Content Containers -->
+    <div id="hero-section"></div>
+    <div id="about-section"></div>
+    <div id="skills-section"></div>
+    <div id="projects-section"></div>
+    <div id="blog-section"></div>
+    <div id="contact-section"></div>
+    <div id="footer-section"></div>
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $('.sidenav').sidenav();
-            
-            // Smooth scrolling for navigation links
-            $('a[href^="#"]').on('click', function(event) {
-                var target = $(this.getAttribute('href'));
-                if( target.length ) {
-                    event.preventDefault();
-                    $('html, body').stop().animate({
-                        scrollTop: target.offset().top - 70
-                    }, 1000);
-                }
-            });
-        });
-    </script>
+    <script type="module" src="js/main.js"></script>
 </body>
+
 </html>
