@@ -3,6 +3,7 @@ import { initNavigation } from './navigation.js';
 import { initSmoothScroll } from './scroll.js';
 import { generateExperienceHTML } from './experience-data.js';
 import { generateProjectsHTML } from './projects-data.js';
+import { generateBlogPostsHTML } from './blog-data.js';
 
 // Load HTML component into target element
 async function loadComponent(url, targetId) {
@@ -41,6 +42,12 @@ async function init() {
     const projectsList = document.getElementById('projects-list');
     if (projectsList) {
         projectsList.innerHTML = generateProjectsHTML();
+    }
+
+    // Populate blog section with data
+    const blogList = document.getElementById('blog-list');
+    if (blogList) {
+        blogList.innerHTML = generateBlogPostsHTML();
     }
 
     // Initialize modules after content is loaded

@@ -57,6 +57,22 @@
     height: 100%;
 }
 
+.blog-tags {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.blog-tags .chip {
+    background-color: #e3f2fd;
+    color: var(--primary);
+    font-size: 0.85rem;
+    height: 28px;
+    line-height: 28px;
+    padding: 0 12px;
+}
+
 /* Contact Icons */
 .contact-icon {
     font-size: 3rem;
