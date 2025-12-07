@@ -1,6 +1,8 @@
 // Main Application Module
 import { initNavigation } from './navigation.js';
 import { initSmoothScroll } from './scroll.js';
+import { generateExperienceHTML } from './experience-data.js';
+import { generateProjectsHTML } from './projects-data.js';
 
 // Load HTML component into target element
 async function loadComponent(url, targetId) {
@@ -28,6 +30,18 @@ async function init() {
         loadComponent('pages/contact.html', 'contact-section'),
         loadComponent('pages/footer.html', 'footer-section')
     ]);
+
+    // Populate experience section with data
+    const experienceList = document.getElementById('experience-list');
+    if (experienceList) {
+        experienceList.innerHTML = generateExperienceHTML();
+    }
+
+    // Populate projects section with data
+    const projectsList = document.getElementById('projects-list');
+    if (projectsList) {
+        projectsList.innerHTML = generateProjectsHTML();
+    }
 
     // Initialize modules after content is loaded
     initNavigation();
