@@ -76,6 +76,7 @@ export function generateExperienceHTML() {
                         ${exp.keywords.map(keyword => `<div class="chip">${keyword}</div>`).join('\n                        ')}
                     </div>
                 </div>
+                <i class="material-icons expand-icon">expand_more</i>
             </div>
             <div class="collapsible-body">
                 <ul class="browser-default">

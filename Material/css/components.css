@@ -146,6 +146,17 @@
 .collapsible-header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+}
+
+.expand-icon {
+    transition: transform 0.3s ease;
+    margin-left: 10px;
+    color: #757575;
+}
+
+.collapsible-header.active .expand-icon {
+    transform: rotate(180deg);
 }
 
 .collapsible-body ul.browser-default {
