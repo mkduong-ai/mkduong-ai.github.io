@@ -1,5 +1,5 @@
 // Project detail page script
-import { getProjectById } from './projects-data.js';
+import { getProjectById, loadProjectContent } from './projects-data.js';
 
 // Get project ID from URL
 function getProjectIdFromUrl() {
@@ -66,8 +66,10 @@ async function init() {
         document.getElementById('detail-technologies').innerHTML = techHtml;
     }
 
-    // Load detailed content
-    document.getElementById('project-content').innerHTML = project.detailedDescription;
+    // Load and render markdown content
+    document.getElementById('project-content').innerHTML = '<p>Loading project details...</p>';
+    const content = await loadProjectContent(project.markdownFile);
+    document.getElementById('project-content').innerHTML = content;
 }
 
 // Run when DOM is ready
