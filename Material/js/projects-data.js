@@ -1,3 +1,5 @@
+import { renderMarkdownWithMarked } from './markdown-renderer.js';
+
 // Projects data configuration
 const projects = [
     {
@@ -180,67 +182,4 @@ export async function loadProjectContent(markdownFile) {
         console.error('Error loading project content:', error);
         return '<p>Error loading project content.</p>';
     }
-}
-
-// Render markdown using marked.js library (with fallback to basic renderer)
-async function renderMarkdownWithMarked(markdown) {
-    try {
-        // Try to use marked.js from CDN
-        const { marked } = await import('https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js');
-
-        // Configure marked for better code highlighting
-        marked.setOptions({
-            breaks: true,
-            gfm: true,
-            headerIds: true,
-            mangle: false
-        });
-
-        // Parse markdown to HTML
-        let html = marked.parse(markdown);
-
-        return html;
-    } catch (error) {
-        console.warn('Marked.js failed to load, falling back to basic renderer:', error);
-        return renderMarkdown(markdown);
-    }
-}
-
-// Simple markdown renderer (basic support) - FALLBACK ONLY
-function renderMarkdown(markdown) {
-    let html = markdown;
-
-    // Headers
-    html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
-    html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
-    html = html.replace(/^# (.*$)/gim, '<h1>$1</h1>');
-
-    // Bold
-    html = html.replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>');
-
-    // Italic
-    html = html.replace(/\*(.*?)\*/gim, '<em>$1</em>');
-
-    // Code blocks
-    html = html.replace(/```([\s\S]*?)```/gim, '<pre><code>$1</code></pre>');
-
-    // Inline code
-    html = html.replace(/`([^`]+)`/gim, '<code>$1</code>');
-
-    // Links
-    html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/gim, '<a href="$2">$1</a>');
-
-    // Lists
-    html = html.replace(/^\* (.*$)/gim, '<li>$1</li>');
-    html = html.replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>');
-
-    // Paragraphs
-    html = html.split('\n\n').map(para => {
-        if (!para.match(/^<[h|ul|pre]/)) {
-            return `<p>${para}</p>`;
-        }
-        return para;
-    }).join('\n');
-
-    return html;
 }

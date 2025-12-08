@@ -61,10 +61,10 @@ async function init() {
     imageElement.alt = project.title;
 
     // Add technologies
-    if (project.technologies) {
-        const techHtml = project.technologies.map(tech => `<div class="chip">${tech}</div>`).join('');
-        document.getElementById('detail-technologies').innerHTML = techHtml;
-    }
+    // if (project.technologies) {
+    //     const techHtml = project.technologies.map(tech => `<div class="chip">${tech}</div>`).join('');
+    //     document.getElementById('detail-technologies').innerHTML = techHtml;
+    // }
 
     // Load and render markdown content
     document.getElementById('project-content').innerHTML = '<p>Loading project details...</p>';
