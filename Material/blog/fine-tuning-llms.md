@@ -2,6 +2,8 @@
 
 Large Language Models (LLMs) have revolutionized natural language processing, but adapting them to specialized domains remains a challenge. In this post, we'll explore effective techniques for fine-tuning LLMs when working with limited domain-specific data.
 
+$$\sqrt{3x-1}+(1+x)^2$$
+
 ## The Challenge
 
 Pre-trained LLMs like GPT, BERT, and their variants are trained on massive general-purpose corpora. While they demonstrate impressive capabilities, they often struggle with:

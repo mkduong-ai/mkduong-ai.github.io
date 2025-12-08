@@ -94,6 +94,17 @@
     color: var(--primary-dark);
 }
 
+/* KaTeX Math Equations */
+.blog-content .katex-display {
+    margin: 30px 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.blog-content .katex {
+    font-size: 1.1em;
+}
+
 .blog-tags {
     margin-top: 15px;
     display: flex;
