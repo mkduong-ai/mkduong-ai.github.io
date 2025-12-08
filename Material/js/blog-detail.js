@@ -50,7 +50,7 @@ async function init() {
     }
 
     // Update page title and header
-    document.getElementById('blog-title').textContent = `${post.title} - Dr. Manh Khoi Duong`;
+    document.getElementById('blog-title').textContent = `${post.title} - Dr. Duong`;
     document.getElementById('post-title').textContent = post.title;
     document.getElementById('post-date').textContent = formatDate(post.date);
 
