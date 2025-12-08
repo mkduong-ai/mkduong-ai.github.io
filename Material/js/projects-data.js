@@ -181,7 +181,10 @@ export function generateProjectsHTML(page = 0) {
 
 // Get project by ID
 export function getProjectById(id) {
-    return projects.find(project => project.id === id);
+    console.log('Getting project by ID:', id);
+    const project = projects.find(project => project.id === id);
+    console.log('Found project:', project);
+    return project;
 }
 
 // Get total number of pages

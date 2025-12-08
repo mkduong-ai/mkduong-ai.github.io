@@ -29,14 +29,17 @@ async function init() {
 
     // Get project ID
     const projectId = getProjectIdFromUrl();
+    console.log('Project ID from URL:', projectId);
 
     if (!projectId) {
+        console.error('No project ID found in URL');
         document.getElementById('project-content').innerHTML = '<p>Project not found.</p>';
         return;
     }
 
     // Get project data
     const project = getProjectById(projectId);
+    console.log('Retrieved project data:', project);
 
     if (!project) {
         document.getElementById('project-content').innerHTML = '<p>Project not found.</p>';
@@ -44,7 +47,6 @@ async function init() {
     }
 
     // Update page title and header
-    document.getElementById('project-title').textContent = `${project.title} - Dr. Manh Khoi Duong`;
     document.getElementById('detail-title').textContent = project.title;
 
     // Add tags
