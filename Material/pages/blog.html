@@ -1,9 +1,67 @@
-<!-- Blog Section -->
-<section id="blog" class="section grey lighten-3">
-    <div class="container">
-        <h3 class="center-align">Latest Blog Posts</h3>
-        <div class="row" id="blog-list">
-            <!-- Blog posts will be dynamically inserted here -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Dr. Duong</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="white">
+        <div class="nav-wrapper">
+            <a href="../index.html" class="brand-logo blue-text text-darken-2">Dr. Duong</a>
+            <a href="#" data-target="mobile-nav" class="sidenav-trigger blue-text text-darken-2">
+                <i class="material-icons">menu</i>
+            </a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="../index.html#about" class="blue-text text-darken-2">About</a></li>
+                <li><a href="../index.html#experience" class="blue-text text-darken-2">Experience</a></li>
+                <li><a href="projects.html" class="blue-text text-darken-2">Projects</a></li>
+                <li><a href="blog.html" class="blue-text text-darken-2">Blog</a></li>
+                <li><a href="../index.html#contact" class="blue-text text-darken-2">Contact</a></li>
+            </ul>
         </div>
-    </div>
-</section>
+    </nav>
+
+    <ul class="sidenav" id="mobile-nav">
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#experience">Experience</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+
+    <!-- Blog Listing Section -->
+    <section class="section grey lighten-3">
+        <div class="container">
+            <h3 class="center-align">Blog Posts</h3>
+            <div class="row" id="blog-list">
+                <!-- Blog posts will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-section"></div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="module" src="../js/blog-listing.js"></script>
+</body>
+
+</html>

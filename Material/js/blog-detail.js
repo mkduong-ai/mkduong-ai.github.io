@@ -16,7 +16,7 @@ function formatDate(dateString) {
 // Load footer component
 async function loadFooter() {
     try {
-        const response = await fetch('pages/footer.html');
+        const response = await fetch('../home/footer.html');
         const html = await response.text();
         document.getElementById('footer-section').innerHTML = html;
     } catch (error) {

@@ -23,13 +23,13 @@ async function loadComponent(url, targetId) {
 async function init() {
     // Load all page components
     await Promise.all([
-        loadComponent('pages/hero.html', 'hero-section'),
-        loadComponent('pages/about.html', 'about-section'),
-        loadComponent('pages/experience.html', 'experience-section'),
-        loadComponent('pages/projects.html', 'projects-section'),
-        loadComponent('pages/blog.html', 'blog-section'),
-        loadComponent('pages/contact.html', 'contact-section'),
-        loadComponent('pages/footer.html', 'footer-section')
+        loadComponent('home/hero.html', 'hero-section'),
+        loadComponent('home/about.html', 'about-section'),
+        loadComponent('home/experience.html', 'experience-section'),
+        loadComponent('home/projects.html', 'projects-section'),
+        loadComponent('home/blog.html', 'blog-section'),
+        loadComponent('home/contact.html', 'contact-section'),
+        loadComponent('home/footer.html', 'footer-section')
     ]);
 
     // Populate experience section with data

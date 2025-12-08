@@ -64,7 +64,7 @@ export function getBlogPostById(id) {
 // Load and render markdown content
 export async function loadBlogContent(markdownFile) {
     try {
-        const response = await fetch(markdownFile);
+        const response = await fetch('../' + markdownFile);
         const markdown = await response.text();
         return await renderMarkdownWithMarked(markdown);
     } catch (error) {
