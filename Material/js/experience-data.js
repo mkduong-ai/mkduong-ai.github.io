@@ -1,5 +1,4 @@
 // Experience data configuration
-// Experience data configuration
 const experiences = [
     {
         title: 'Senior Machine Learning Researcher',
