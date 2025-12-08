@@ -1,8 +1,10 @@
 // Experience data configuration
+// Experience data configuration
 const experiences = [
     {
         title: 'Senior Machine Learning Researcher',
         company: 'Advanced AI Research Lab',
+        link: 'https://google.com',
         period: 'Jan 2022 - Present',
         responsibilities: [
             'Led a team of 5 researchers in developing novel deep learning architectures for computer vision tasks, achieving state-of-the-art results on ImageNet benchmark',
@@ -16,6 +18,7 @@ const experiences = [
     {
         title: 'Machine Learning Engineer',
         company: 'Tech Innovation Corp',
+        link: '#',
         period: 'Jun 2019 - Dec 2021',
         responsibilities: [
             'Developed and deployed production-ready NLP models for sentiment analysis and text classification, processing 100K+ documents daily',
@@ -29,6 +32,7 @@ const experiences = [
     {
         title: 'Research Scientist Intern',
         company: 'Global AI Institute',
+        link: '#',
         period: 'Jun 2018 - Aug 2018',
         responsibilities: [
             'Researched novel attention mechanisms for transformer-based language models',
@@ -42,6 +46,7 @@ const experiences = [
     {
         title: 'Data Science Intern',
         company: 'Analytics Solutions Inc',
+        link: '#',
         period: 'May 2017 - Aug 2017',
         responsibilities: [
             'Developed predictive models for customer churn using scikit-learn and XGBoost, achieving 85% accuracy',
@@ -62,7 +67,10 @@ export function generateExperienceHTML() {
                 <i class="material-icons">work</i>
                 <div class="experience-header-content">
                     <strong>${exp.title}</strong>
-                    <span class="experience-company">${exp.company}</span>
+                    ${exp.link ?
+            `<a href="${exp.link}" target="_blank" rel="noopener noreferrer" class="experience-company blue-text text-darken-2" onclick="event.stopPropagation()">${exp.company}</a>` :
+            `<span class="experience-company">${exp.company}</span>`
+        }
                     <span class="experience-date grey-text">${exp.period}</span>
                     <div class="experience-keywords">
                         ${exp.keywords.map(keyword => `<div class="chip">${keyword}</div>`).join('\n                        ')}
