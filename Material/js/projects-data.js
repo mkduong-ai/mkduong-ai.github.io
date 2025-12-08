@@ -71,6 +71,31 @@ export function generateProjectsHTML(page = 0) {
     `).join('\n\n');
 }
 
+// Generate HTML for ALL projects (no pagination)
+export function generateAllProjectsHTML() {
+    return projects.map(project => `
+        <div class="col s12 m6 l4">
+            <div class="card project-card">
+                <div class="card-image">
+                    <img src="${project.image}" alt="${project.title}">
+                </div>
+                <div class="card-content">
+                    <span class="card-title">${project.title}</span>
+                    <p class="project-description">${project.description}</p>
+                    ${project.tags ? `
+                    <div class="project-tags">
+                        ${project.tags.map(tag => `<div class="chip">${tag}</div>`).join('\n                        ')}
+                    </div>
+                    ` : ''}
+                </div>
+                <div class="card-action">
+                    <a href="project-detail.html?id=${project.id}" class="blue-text">View Details</a>
+                </div>
+            </div>
+        </div>
+    `).join('\n\n');
+}
+
 // Get project by ID
 export function getProjectById(id) {
     console.log('Getting project by ID:', id);

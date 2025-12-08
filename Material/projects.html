@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="blog-title">Blog Post - Dr. Manh Khoi Duong</title>
+    <title>Projects - Dr. Manh Khoi Duong</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 
     <!-- Materialize CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -17,7 +18,6 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/blog-detail.css">
 </head>
 
 <body>
@@ -46,31 +46,15 @@
         <li><a href="index.html#contact">Contact</a></li>
     </ul>
 
-    <!-- Blog Content -->
-    <div class="section white">
+    <!-- Projects Listing Section -->
+    <section class="section grey lighten-3">
         <div class="container">
-            <div class="row">
-                <div class="col s12 m10 offset-m1 l8 offset-l2">
-                    <!-- Back button -->
-                    <a href="blog.html" class="btn-flat blue-text">
-                        <i class="material-icons left">arrow_back</i>Back to Blog
-                    </a>
-
-                    <!-- Blog header -->
-                    <div class="blog-header">
-                        <h1 id="post-title"></h1>
-                        <p class="grey-text" id="post-date"></p>
-                        <div id="post-tags" class="blog-tags"></div>
-                    </div>
-
-                    <!-- Blog content -->
-                    <div id="blog-content" class="blog-content">
-                        <p>Loading...</p>
-                    </div>
-                </div>
+            <h3 class="center-align">All Projects</h3>
+            <div class="row" id="projects-list-full">
+                <!-- Projects will be dynamically inserted here -->
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Footer -->
     <div id="footer-section"></div>
@@ -78,7 +62,7 @@
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script type="module" src="js/blog-detail.js"></script>
+    <script type="module" src="js/projects-listing.js"></script>
 </body>
 
 </html>
