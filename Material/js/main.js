@@ -2,7 +2,7 @@
 import { initNavigation } from './navigation.js';
 import { initSmoothScroll } from './scroll.js';
 import { generateExperienceHTML } from './experience-data.js';
-import { generateProjectsHTML } from './projects-data.js';
+import { generateProjectsHTML, initProjectCarousel } from './projects-data.js';
 import { generateBlogPostsHTML } from './blog-data.js';
 
 // Load HTML component into target element
@@ -43,6 +43,9 @@ async function init() {
     if (projectsList) {
         projectsList.innerHTML = generateProjectsHTML();
     }
+
+    // Initialize project carousel navigation
+    initProjectCarousel();
 
     // Populate blog section with data
     const blogList = document.getElementById('blog-list');
