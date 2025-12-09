@@ -1,6 +1,18 @@
 // Experience data configuration
 const experiences = [
     {
+        title: 'Co-Founder',
+        company: 'Denki Health GbR, Bochum, Germany',
+        link: 'https://www.denkihealth.de/',
+        period: 'Dec 2025 - Present',
+        responsibilities: [
+            'Developing business plan for fundraising',
+            'Consulting where and how to use AI for the company to improve user experience',
+            'Pitching the company to potential investors'
+        ],
+        keywords: ['Fundraising', 'Business Plan', 'Consulting', 'AI', 'Healthcare']
+    },
+    {
         title: 'University Lecturer / PostDoc Researcher',
         company: 'Heinrich Heine University Düsseldorf, Germany',
         link: 'https://dbs.cs.uni-duesseldorf.de/mitarbeiter.php?id=duong',
@@ -13,7 +25,7 @@ const experiences = [
             'Writing grant proposals to fund research projects',
             'Teaching <i>Natural Language Processing</i>: Part-of-Speech Tagging, Named Entity Recognition, Text Classification, Sentiment Analysis, Machine Translation, Text Summarization, Word Embeddings, Text Generation'
         ],
-        keywords: ['Fair ML', 'Natural Language Processing', 'Research', 'Teaching', 'Python', 'PyTorch']
+        keywords: ['Fair ML', 'Natural Language Processing', 'Research', 'Teaching', 'Python', 'NumPy', 'CVXPY', 'PyTorch']
     },
     {
         title: 'External Machine Learning Consultant',
@@ -45,7 +57,7 @@ const experiences = [
     },
     {
         title: 'PhD Candidate / MLOps Engineer / Fullstack Developer',
-        company: 'Heinrich Heine University Düsseldorf, Germany + Federal Ministry of Education and Research (BMBF)',
+        company: 'Heinrich Heine University Düsseldorf, Germany & Federal Ministry of Education and Research (BMBF)',
         link: 'https://rapp.hhu.de/',
         period: 'Mar 2021 - Mar 2024',
         responsibilities: [
@@ -61,6 +73,22 @@ const experiences = [
         ],
         keywords: ['Python', 'Scikit-learn', 'MLOps', 'PyQt5', 'Docker', 'Kubernetes', 'CI/CD', 'Scrum', 'Agile', 'Flask', 'MariaDB', 'JavaScript']
     },
+    {
+        title: 'Startup Co-Founder',
+        company: 'FitWorks, Düsseldorf, Germany',
+        link: '#',
+        period: 'Jul 2021 - Aug 2021',
+        responsibilities: [
+            'Participated in the <a href="https://app.ekipa.de/challenges/tech-for-future/timeline" target="_blank">Solve For Tomorrow Challenge</a> by Samsung Electronics Co., Ltd. & ekipa GmbH for fundraising',
+            'Top-10 finalist among >150 teams',
+            'Collaborated with a team of 3 to develop a startup',
+            'Filmed a video pitch for our startup',
+            'Pitched our startup to potential investors multiple times',
+            'Developed a business plan for the startup',
+            'Startup idea: App for smartwatches to predict heart disease risk'
+        ],
+        keywords: ['Elevator Pitch', 'Business Plan', 'Consulting', 'AI', 'Healthcare']
+    }
     // {
     //     title: 'Research Scientist Intern',
     //     company: 'Global AI Institute',
