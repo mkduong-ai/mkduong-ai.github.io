@@ -66,7 +66,7 @@ export function generateProjectsHTML(page = 0) {
                     ` : ''}
                 </div>
                 <div class="card-action">
-                    <a href="project-detail.html?id=${project.id}" class="blue-text">View Details</a>
+                    <a href="../pages/project-detail.html?id=${project.id}" class="blue-text">View Details</a>
                 </div>
             </div>
         </div>
@@ -91,7 +91,7 @@ export function generateAllProjectsHTML() {
                     ` : ''}
                 </div>
                 <div class="card-action">
-                    <a href="project-detail.html?id=${project.id}" class="blue-text">View Details</a>
+                    <a href="../pages/project-detail.html?id=${project.id}" class="blue-text">View Details</a>
                 </div>
             </div>
         </div>

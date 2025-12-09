@@ -49,7 +49,7 @@ export function generateBlogPostsHTML() {
                     ` : ''}
                 </div>
                 <div class="card-action">
-                    <a href="blog-post.html?id=${post.id}" class="blue-text">Read More</a>
+                    <a href="../pages/blog-post.html?id=${post.id}" class="blue-text">Read More</a>
                 </div>
             </div>
         </div>
