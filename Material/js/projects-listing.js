@@ -1,5 +1,5 @@
 // Projects listing page script
-import { generateAllProjectsHTML } from './projects-data.js';
+import { generateProjectsHTML } from './projects-data.js';
 
 // Load footer component
 async function loadFooter() {
@@ -24,7 +24,7 @@ async function init() {
     // Populate projects list
     const projectsList = document.getElementById('projects-list-full');
     if (projectsList) {
-        projectsList.innerHTML = generateAllProjectsHTML();
+        projectsList.innerHTML = generateProjectsHTML({ all: true });
     }
 }
 

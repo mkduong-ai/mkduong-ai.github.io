@@ -44,38 +44,21 @@ const projects = [
 let currentPage = 0;
 const projectsPerPage = 3;
 
-// Generate projects HTML for current page
-export function generateProjectsHTML(page = 0) {
-    const start = page * projectsPerPage;
-    const end = start + projectsPerPage;
-    const visibleProjects = projects.slice(start, end);
+// Unified function for paginated OR full project rendering
+export function generateProjectsHTML({ page = 0, all = false } = {}) {
+    let items;
 
-    return visibleProjects.map(project => `
-        <div class="col s12 m6 l4">
-            <div class="card project-card">
-                <div class="card-image">
-                    <img src="${project.image}" alt="${project.title}">
-                </div>
-                <div class="card-content">
-                    <span class="card-title">${project.title}</span>
-                    <p class="project-description">${project.description}</p>
-                    ${project.tags ? `
-                    <div class="project-tags">
-                        ${project.tags.map(tag => `<div class="chip">${tag}</div>`).join('\n                        ')}
-                    </div>
-                    ` : ''}
-                </div>
-                <div class="card-action">
-                    <a href="../pages/project-detail.html?id=${project.id}" class="blue-text">View Details</a>
-                </div>
-            </div>
-        </div>
-    `).join('\n\n');
-}
+    if (all) {
+        // return ALL projects
+        items = projects;
+    } else {
+        // return ONLY projects for the selected page
+        const start = page * projectsPerPage;
+        const end = start + projectsPerPage;
+        items = projects.slice(start, end);
+    }
 
-// Generate HTML for ALL projects (no pagination)
-export function generateAllProjectsHTML() {
-    return projects.map(project => `
+    return items.map(project => `
         <div class="col s12 m6 l4">
             <div class="card project-card">
                 <div class="card-image">
@@ -134,7 +117,7 @@ export function initProjectCarousel() {
     // Update display
     function updateDisplay() {
         if (projectsList) {
-            projectsList.innerHTML = generateProjectsHTML(currentPage);
+            projectsList.innerHTML = generateProjectsHTML({ page: currentPage });
         }
 
         // Update button states
