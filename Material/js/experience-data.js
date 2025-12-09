@@ -1,61 +1,94 @@
 // Experience data configuration
 const experiences = [
     {
-        title: 'Senior Machine Learning Researcher',
-        company: 'Advanced AI Research Lab',
-        link: 'https://google.com',
-        period: 'Jan 2022 - Present',
+        title: 'University Lecturer / PostDoc Researcher',
+        company: 'Heinrich Heine University Düsseldorf, Germany',
+        link: 'https://dbs.cs.uni-duesseldorf.de/mitarbeiter.php?id=duong',
+        period: 'Apr 2025 - Present',
         responsibilities: [
-            'Led a team of 5 researchers in developing novel deep learning architectures for computer vision tasks, achieving state-of-the-art results on ImageNet benchmark',
-            'Published 8 papers in top-tier conferences (NeurIPS, ICML, CVPR) with over 500 citations',
-            'Designed and implemented a scalable training pipeline using PyTorch and Ray, reducing training time by 60%',
-            'Collaborated with industry partners to deploy research prototypes into production environments serving 1M+ users',
-            'Mentored 3 PhD students and 2 postdoctoral researchers on advanced machine learning techniques'
+            'Introducing and lecturing a new course <i>Fairness in Machine Learning (Fair ML)</i> for the AI & Data Science master study program',
+            'Creating new slides and exercises from scratch for <i>Fair ML</i>: AI Act, Fairness Criteria, Fairness Metrics, Optimization, Bias Mitigation Methods, Fair Ranking, Bayesian Statistics, Social Choice Theory',
+            'Conducting research in the field of algorithmic fairness in machine learning',
+            'Publishing research papers in international conferences',
+            'Writing grant proposals to fund research projects',
+            'Teaching <i>Natural Language Processing</i>: Part-of-Speech Tagging, Named Entity Recognition, Text Classification, Sentiment Analysis, Machine Translation, Text Summarization, Word Embeddings, Text Generation'
         ],
-        keywords: ['PyTorch', 'Computer Vision', 'Deep Learning', 'Ray', 'Research', 'Team Leadership', 'Python']
+        keywords: ['Fair ML', 'Natural Language Processing', 'Research', 'Teaching', 'Python', 'PyTorch']
     },
     {
-        title: 'Machine Learning Engineer',
-        company: 'Tech Innovation Corp',
-        link: '#',
-        period: 'Jun 2019 - Dec 2021',
+        title: 'External Machine Learning Consultant',
+        company: 'Dive connected GmbH, Wuppertal, Germany',
+        link: 'https://dive-jobmatch.com/',
+        period: 'Dec 2024 - Oct 2025',
         responsibilities: [
-            'Developed and deployed production-ready NLP models for sentiment analysis and text classification, processing 100K+ documents daily',
-            'Built end-to-end ML pipelines using TensorFlow, Docker, and Kubernetes on AWS infrastructure',
-            'Implemented A/B testing framework to evaluate model performance, resulting in 25% improvement in user engagement',
-            'Optimized inference latency from 500ms to 50ms through model quantization and efficient serving strategies',
-            'Conducted workshops and training sessions on ML best practices for engineering teams'
+            'Cooperation with Dive connected GmbH to develop a fair job matching platform using machine learning',
+            'Participated in the <a href="https://www.bundeswirtschaftsministerium.de/Redaktion/DE/Artikel/Innovation/igp.html" target="_blank">BMWE Innovation Program (2025)</a> to receive funding for the project',
+            'Co-wrote the business plan, including objectives, methodology, and expected impact',
+            'Supported the strategic planning and financial justification for the proposed project',
+            'Ensured compliance with application criteria',
+            'Developed and published a novel algorithm for fair ranking in <a href="https://link.springer.com/chapter/10.1007/978-3-032-02215-8_18" target="_blank">Big Data Analytics and Knowledge Discovery (2025)</a>',
         ],
-        keywords: ['TensorFlow', 'NLP', 'Docker', 'Kubernetes', 'AWS', 'MLOps', 'Python', 'A/B Testing']
+        keywords: ['Business Plan', 'Strategic Planning', 'BMWE Innovation Program', 'Algorithmic Fairness', 'Machine Learning']
     },
     {
-        title: 'Research Scientist Intern',
-        company: 'Global AI Institute',
-        link: '#',
-        period: 'Jun 2018 - Aug 2018',
+        title: 'PhD Candidate / Teaching Assistant (TA)',
+        company: 'Heinrich Heine University Düsseldorf, Germany',
+        link: 'https://dbs.cs.uni-duesseldorf.de/mitarbeiter.php?id=duong',
+        period: 'Apr 2024 - Apr 2025',
         responsibilities: [
-            'Researched novel attention mechanisms for transformer-based language models',
-            'Implemented and evaluated multiple model architectures using PyTorch on large-scale text corpora',
-            'Contributed to open-source ML frameworks with 200+ GitHub stars',
-            'Presented research findings at internal seminars and contributed to 2 workshop papers',
-            'Collaborated with cross-functional teams including data engineers and product managers'
+            'Conducting research in algorithmic fairness, operational research, optimization, heuristics, uncertainty modeling, and machine learning',
+            'TA for <i>Databases: Advanced Topics</i>: PostgreSQL, DDL, DML, SQL Injection, Java Database Connectivity, Spring Boot, RESTful API, Docker, HTML, CSS',
+            'TA for <i>Knowledge Discovery in Databases</i>: Clustering, DBSCAN, K-Means++, Hierarchical Clustering, Outlier Detection, Naive Bayes, Decision Trees, Nearest Neighbors, SVM, Association Rule Mining, Subspace Clustering, Efficient Indexing',
+            'TA for <i>Introduction to Database Systems</i>: Entity-Relationship Model, Relational Databases, Normalization, SQL, DDL, DML, Transaction Management, ACID Properties',
         ],
-        keywords: ['PyTorch', 'Transformers', 'NLP', 'Research', 'Python', 'Open Source']
+        keywords: ['Research', 'Teaching', 'Fullstack Development', 'Docker', 'Databases', 'Clustering', 'Classification', 'Spring Boot', 'RESTful API']
     },
     {
-        title: 'Data Science Intern',
-        company: 'Analytics Solutions Inc',
-        link: '#',
-        period: 'May 2017 - Aug 2017',
+        title: 'PhD Candidate / MLOps Engineer / Fullstack Developer',
+        company: 'Heinrich Heine University Düsseldorf, Germany + Federal Ministry of Education and Research (BMBF)',
+        link: 'https://rapp.hhu.de/',
+        period: 'Mar 2021 - Mar 2024',
         responsibilities: [
-            'Developed predictive models for customer churn using scikit-learn and XGBoost, achieving 85% accuracy',
-            'Created interactive dashboards using Tableau and Python for business stakeholders',
-            'Performed exploratory data analysis on large datasets (10M+ records) using SQL and pandas',
-            'Automated data preprocessing workflows, reducing manual effort by 40 hours per week',
-            'Presented insights and recommendations to senior management team'
+            'Interdisciplinary research project on <i>Responsible Academic Performance Prediction</i> (RAPP) with social and political scientists and sociologists',
+            'Developed an <a href="https://github.com/hhu-rapp/rapp-tool" target="_blank">MLOps GUI</a> collaboratively for training and evaluating ML models for various performance and fairness metrics',
+            'Developed a <a href="https://github.com/hhu-rapp/rapp-webapp" target="_blank">dashboard (web app)</a> for data analysis and deployment of machine learning models to predict academic performances of students (Docker, Kubernetes, Flask)',
+            'Developed a Flask web application using MariaDB and Docker for the <a href="https://rapp.hhu.de/" target="_blank">project website</a>',
+            'Configured CI/CD pipelines on GitLab for test-driven development',
+            'Aligning project goals with internal and external stakeholders',
+            'Agile project management and team coordination (Scrum)',
+            'Publishing and presenting research results at conferences',
+            'Supervision of <a href="https://dbs.cs.uni-duesseldorf.de/mitarbeiter.php?id=duong" target="_blank">20+ Bachelor and Master theses</a>'
         ],
-        keywords: ['Scikit-learn', 'XGBoost', 'SQL', 'Pandas', 'Tableau', 'Python', 'Data Analysis']
-    }
+        keywords: ['Python', 'Scikit-learn', 'MLOps', 'PyQt5', 'Docker', 'Kubernetes', 'CI/CD', 'Scrum', 'Agile', 'Flask', 'MariaDB', 'JavaScript']
+    },
+    // {
+    //     title: 'Research Scientist Intern',
+    //     company: 'Global AI Institute',
+    //     link: '#',
+    //     period: 'Jun 2018 - Aug 2018',
+    //     responsibilities: [
+    //         'Researched novel attention mechanisms for transformer-based language models',
+    //         'Implemented and evaluated multiple model architectures using PyTorch on large-scale text corpora',
+    //         'Contributed to open-source ML frameworks with 200+ GitHub stars',
+    //         'Presented research findings at internal seminars and contributed to 2 workshop papers',
+    //         'Collaborated with cross-functional teams including data engineers and product managers'
+    //     ],
+    //     keywords: ['PyTorch', 'Transformers', 'NLP', 'Research', 'Python', 'Open Source']
+    // },
+    // {
+    //     title: 'Data Science Intern',
+    //     company: 'Analytics Solutions Inc',
+    //     link: '#',
+    //     period: 'May 2017 - Aug 2017',
+    //     responsibilities: [
+    //         'Developed predictive models for customer churn using scikit-learn and XGBoost, achieving 85% accuracy',
+    //         'Created interactive dashboards using Tableau and Python for business stakeholders',
+    //         'Performed exploratory data analysis on large datasets (10M+ records) using SQL and pandas',
+    //         'Automated data preprocessing workflows, reducing manual effort by 40 hours per week',
+    //         'Presented insights and recommendations to senior management team'
+    //     ],
+    //     keywords: ['Scikit-learn', 'XGBoost', 'SQL', 'Pandas', 'Tableau', 'Python', 'Data Analysis']
+    // }
 ];
 
 // Generate experience HTML
