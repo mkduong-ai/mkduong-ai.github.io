@@ -30,7 +30,7 @@ const experiences = [
     {
         title: 'External Machine Learning Consultant',
         company: 'Dive connected GmbH, Wuppertal, Germany',
-        link: 'https://dive-jobmatch.com/',
+        link: 'https://www.divesquared.com/',
         period: 'Dec 2024 - Oct 2025',
         responsibilities: [
             'Cooperation with Dive connected GmbH to develop a fair job matching platform using machine learning',
