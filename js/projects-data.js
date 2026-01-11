@@ -3,6 +3,15 @@ import { renderMarkdownWithMarked } from './markdown-renderer.js';
 // Projects data configuration
 const projects = [
     {
+        id: 'rapp',
+        title: 'RAPP',
+        description: 'Responsible Academic Performance Prediction',
+        markdownFile: 'projects/rapp.md',
+        image: 'https://via.placeholder.com/400x200/2196F3/ffffff?text=Computer+Vision',
+        tags: ['Responsible AI', 'Fair ML', 'xAI', 'Qualitative & Quantitative Research'],
+        technologies: ['Python', 'PyTorch', 'OpenCV', 'CUDA', 'Docker']
+    },
+    {
         id: 'object-detection',
         title: 'Real-time Object Detection',
         description: 'Developed a YOLO-based object detection system achieving 95% accuracy with real-time processing capabilities.',

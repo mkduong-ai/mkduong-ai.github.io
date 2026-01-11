@@ -3,7 +3,7 @@ import { initNavigation } from './navigation.js';
 import { initSmoothScroll } from './scroll.js';
 import { generateExperienceHTML } from './experience-data.js';
 import { generateProjectsHTML, initProjectCarousel } from './projects-data.js';
-import { generateBlogPostsHTML } from './blog-data.js';
+import { generateBlogPostsHTML, initBlogCarousel } from './blog-data.js';
 
 // Load HTML component into target element
 async function loadComponent(url, targetId) {
@@ -47,11 +47,8 @@ async function init() {
     // Initialize project carousel navigation
     initProjectCarousel();
 
-    // Populate blog section with data
-    const blogList = document.getElementById('blog-list');
-    if (blogList) {
-        blogList.innerHTML = generateBlogPostsHTML();
-    }
+    // Initialize blog carousel (handles data population and navigation)
+    initBlogCarousel();
 
     // Initialize modules after content is loaded
     initNavigation();

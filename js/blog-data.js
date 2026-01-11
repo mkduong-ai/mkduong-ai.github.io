@@ -31,11 +31,24 @@ function formatDate(dateString) {
     return new Date(dateString).toLocaleDateString('en-US', options);
 }
 
-// Generate blog posts HTML for listing page
-export function generateBlogPostsHTML() {
-    const sortedPosts = sortBlogPostsByDate();
+// Carousel state
+let currentPage = 0;
+const postsPerPage = 2; // Adjust based on layout (2 col)
 
-    return sortedPosts.map(post => `
+// Generate blog posts HTML for listing page
+export function generateBlogPostsHTML({ page = 0, all = false } = {}) {
+    const sortedPosts = sortBlogPostsByDate();
+    let items;
+
+    if (all) {
+        items = sortedPosts;
+    } else {
+        const start = page * postsPerPage;
+        const end = start + postsPerPage;
+        items = sortedPosts.slice(start, end);
+    }
+
+    return items.map(post => `
         <div class="col s12 m6">
             <div class="card blog-card">
                 <div class="card-content">
@@ -54,6 +67,76 @@ export function generateBlogPostsHTML() {
             </div>
         </div>
     `).join('\n\n');
+}
+
+// Get total number of pages
+export function getTotalPages() {
+    return Math.ceil(blogPosts.length / postsPerPage);
+}
+
+// Initialize blog carousel navigation
+export function initBlogCarousel() {
+    const blogList = document.getElementById('blog-list');
+    const prevBtn = document.getElementById('blog-prev');
+    const nextBtn = document.getElementById('blog-next');
+    const navContainer = document.querySelector('.blog-carousel-nav');
+
+    // Hide navigation if not enough posts
+    if (blogPosts.length <= postsPerPage) {
+        if (navContainer) {
+            navContainer.style.display = 'none';
+        }
+        // Still render the posts
+        if (blogList) {
+            blogList.innerHTML = generateBlogPostsHTML({ page: 0 });
+        }
+        return;
+    }
+
+    // Show navigation
+    if (navContainer) {
+        navContainer.style.display = 'flex';
+    }
+
+    // Update display
+    function updateDisplay() {
+        if (blogList) {
+            blogList.innerHTML = generateBlogPostsHTML({ page: currentPage });
+        }
+
+        // Update button states
+        if (prevBtn) {
+            prevBtn.disabled = currentPage === 0;
+            prevBtn.classList.toggle('disabled', currentPage === 0);
+        }
+
+        if (nextBtn) {
+            nextBtn.disabled = currentPage >= getTotalPages() - 1;
+            nextBtn.classList.toggle('disabled', currentPage >= getTotalPages() - 1);
+        }
+    }
+
+    // Event listeners
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            if (currentPage > 0) {
+                currentPage--;
+                updateDisplay();
+            }
+        });
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            if (currentPage < getTotalPages() - 1) {
+                currentPage++;
+                updateDisplay();
+            }
+        });
+    }
+
+    // Initial display
+    updateDisplay();
 }
 
 // Get blog post by ID
