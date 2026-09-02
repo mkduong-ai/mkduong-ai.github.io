@@ -4,48 +4,12 @@ import { renderMarkdownWithMarked } from './markdown-renderer.js';
 const projects = [
     {
         id: 'rapp',
-        title: 'RAPP',
-        description: 'Responsible Academic Performance Prediction',
+        title: 'RAPP: Responsible Academic Performance Prediction',
+        description: 'A multi-year BMBF-funded Responsible AI system delivering Fair ML bias mitigation, Explainable AI (xAI) rule induction, and human-in-the-loop decision support tools for academic performance, including dropout prediction.',
         markdownFile: 'projects/rapp.md',
-        image: 'https://via.placeholder.com/400x200/2196F3/ffffff?text=Computer+Vision',
-        tags: ['Responsible AI', 'Fair ML', 'xAI', 'Qualitative & Quantitative Research'],
-        technologies: ['Python', 'PyTorch', 'OpenCV', 'CUDA', 'Docker']
-    },
-    {
-        id: 'object-detection',
-        title: 'Real-time Object Detection',
-        description: 'Developed a YOLO-based object detection system achieving 95% accuracy with real-time processing capabilities.',
-        markdownFile: 'projects/object-detection.md',
-        image: 'https://via.placeholder.com/400x200/2196F3/ffffff?text=Computer+Vision',
-        tags: ['Computer Vision', 'YOLO', 'Real-time Processing'],
-        technologies: ['Python', 'PyTorch', 'OpenCV', 'CUDA', 'Docker']
-    },
-    {
-        id: 'sentiment-analysis',
-        title: 'Sentiment Analysis API',
-        description: 'Built a BERT-based sentiment analysis service processing 10K+ requests daily with 92% accuracy.',
-        markdownFile: 'projects/sentiment-analysis.md',
-        image: 'https://via.placeholder.com/400x200/FF9800/ffffff?text=NLP',
-        tags: ['NLP', 'BERT', 'API Development'],
-        technologies: ['Python', 'BERT', 'FastAPI', 'Redis', 'Kubernetes']
-    },
-    {
-        id: 'recommendation-engine',
-        title: 'Recommendation Engine',
-        description: 'Created a collaborative filtering system that increased user engagement by 35% for an e-commerce platform.',
-        markdownFile: 'projects/recommendation-engine.md',
-        image: 'https://via.placeholder.com/400x200/4CAF50/ffffff?text=Recommendation',
-        tags: ['Recommendation Systems', 'Collaborative Filtering', 'E-commerce'],
-        technologies: ['Python', 'Apache Spark', 'TensorFlow', 'Elasticsearch', 'AWS']
-    },
-    {
-        id: 'portfolio-analyzer',
-        title: 'AI-Powered Portfolio Analyzer',
-        description: 'Developed an intelligent portfolio analysis tool using machine learning to provide personalized investment insights and risk assessments.',
-        markdownFile: 'projects/portfolio-analyzer.md',
-        image: 'https://via.placeholder.com/400x200/9C27B0/ffffff?text=Portfolio+AI',
-        tags: ['Machine Learning', 'Finance', 'Data Analysis'],
-        technologies: ['Python', 'Scikit-learn', 'React', 'D3.js', 'PostgreSQL']
+        image: 'img/rapp-banner.svg',
+        tags: ['Responsible AI', 'Fair ML', 'Explainable AI (xAI)', 'MLOps', 'Decision Support'],
+        technologies: ['Python', 'PyTorch', 'Scikit-learn', 'SQL', 'Pareto Optimization', 'Docker', 'GDPR Compliance']
     }
 ];
 
@@ -55,6 +19,10 @@ const projectsPerPage = 3;
 
 // Unified function for paginated OR full project rendering
 export function generateProjectsHTML({ page = 0, all = false } = {}) {
+    const isPagesDir = window.location.pathname.includes('/pages/');
+    const basePath = isPagesDir ? '../' : '';
+    const detailPrefix = isPagesDir ? '' : 'pages/';
+
     let items;
 
     if (all) {
@@ -68,10 +36,10 @@ export function generateProjectsHTML({ page = 0, all = false } = {}) {
     }
 
     return items.map(project => `
-        <div class="col s12 m6 l4">
-            <div class="card project-card">
+        <div class="col s12 ${items.length === 1 ? 'm10 offset-m1 l8 offset-l2' : 'm6 l4'}">
+            <div class="card project-card hoverable">
                 <div class="card-image">
-                    <img src="${project.image}" alt="${project.title}">
+                    <img src="${basePath}${project.image}" alt="${project.title}">
                 </div>
                 <div class="card-content">
                     <span class="card-title">${project.title}</span>
@@ -83,7 +51,7 @@ export function generateProjectsHTML({ page = 0, all = false } = {}) {
                     ` : ''}
                 </div>
                 <div class="card-action">
-                    <a href="../pages/project-detail.html?id=${project.id}" class="blue-text">View Details</a>
+                    <a href="${detailPrefix}project-detail.html?id=${project.id}" class="blue-text text-darken-2 font-weight-500">View Project Details &rarr;</a>
                 </div>
             </div>
         </div>
@@ -109,6 +77,11 @@ export function initProjectCarousel() {
     const prevBtn = document.getElementById('projects-prev');
     const nextBtn = document.getElementById('projects-next');
     const navContainer = document.querySelector('.projects-carousel-nav');
+
+    // Populate display
+    if (projectsList) {
+        projectsList.innerHTML = generateProjectsHTML({ page: currentPage });
+    }
 
     // Hide navigation if 3 or fewer projects
     if (projects.length <= projectsPerPage) {
@@ -167,7 +140,9 @@ export function initProjectCarousel() {
 // Load and render markdown content
 export async function loadProjectContent(markdownFile) {
     try {
-        const response = await fetch('../' + markdownFile);
+        const isPagesDir = window.location.pathname.includes('/pages/');
+        const prefix = isPagesDir ? '../' : '';
+        const response = await fetch(prefix + markdownFile);
         const markdown = await response.text();
         return await renderMarkdownWithMarked(markdown);
     } catch (error) {

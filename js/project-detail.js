@@ -55,16 +55,13 @@ async function init() {
         document.getElementById('detail-tags').innerHTML = tagsHtml;
     }
 
-    // Set project image
+    // Set project image with correct relative path
     const imageElement = document.getElementById('detail-image');
-    imageElement.src = project.image;
-    imageElement.alt = project.title;
-
-    // Add technologies
-    // if (project.technologies) {
-    //     const techHtml = project.technologies.map(tech => `<div class="chip">${tech}</div>`).join('');
-    //     document.getElementById('detail-technologies').innerHTML = techHtml;
-    // }
+    if (imageElement && project.image) {
+        const imageSrc = project.image.startsWith('http') || project.image.startsWith('../') ? project.image : '../' + project.image;
+        imageElement.src = imageSrc;
+        imageElement.alt = project.title;
+    }
 
     // Load and render markdown content
     document.getElementById('project-content').innerHTML = '<p>Loading project details...</p>';
