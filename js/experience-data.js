@@ -1,18 +1,6 @@
 // Experience data configuration
 const experiences = [
     {
-        title: 'Co-Founder',
-        company: 'Denki Health GbR, Bochum, Germany',
-        link: 'https://www.denkihealth.de/',
-        period: 'Dec 2025 - Present',
-        responsibilities: [
-            'Developing business plan for fundraising',
-            'Consulting where and how to use AI for the company to improve user experience',
-            'Pitching the company to potential investors'
-        ],
-        keywords: ['Fundraising', 'Business Plan', 'Consulting', 'AI', 'Healthcare']
-    },
-    {
         title: 'University Lecturer / PostDoc Researcher',
         company: 'Heinrich Heine University Düsseldorf, Germany',
         link: 'https://dbs.cs.uni-duesseldorf.de/mitarbeiter.php?id=duong',
@@ -23,9 +11,22 @@ const experiences = [
             'Conducting research in the field of algorithmic fairness in machine learning',
             'Publishing research papers in international conferences',
             'Writing grant proposals to fund research projects',
-            'Teaching <i>Natural Language Processing</i>: Part-of-Speech Tagging, Named Entity Recognition, Text Classification, Sentiment Analysis, Machine Translation, Text Summarization, Word Embeddings, Text Generation'
+            'Teaching <i>Natural Language Processing</i>: Part-of-Speech Tagging, Named Entity Recognition, Text Classification, Sentiment Analysis, Machine Translation, Text Summarization, Word Embeddings, Text Generation',
+            'Teaching <i>Knowledge Discovery in Databases</i>: Clustering, DBSCAN, K-Means++, Hierarchical Clustering, Outlier Detection, Naive Bayes, Decision Trees, Nearest Neighbors, SVM, Association Rule Mining, Subspace Clustering, Efficient Indexing'
         ],
         keywords: ['Fair ML', 'Natural Language Processing', 'Research', 'Teaching', 'Python', 'NumPy', 'CVXPY', 'PyTorch']
+    },
+    {
+        title: 'Co-Founder',
+        company: 'Denki Health GbR, Bochum, Germany',
+        link: 'https://www.denkihealth.de/',
+        period: 'Dec 2025 - Mar 2026',
+        responsibilities: [
+            'Developing business plan for fundraising',
+            'Consulting where and how to use AI for the company to improve user experience',
+            'Pitching the company to potential investors'
+        ],
+        keywords: ['Fundraising', 'Business Plan', 'Consulting', 'AI', 'Healthcare']
     },
     {
         title: 'External Machine Learning Consultant',
