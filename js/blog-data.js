@@ -3,20 +3,12 @@ import { renderMarkdownWithMarked } from './markdown-renderer.js';
 // Blog posts data configuration
 const blogPosts = [
     {
-        id: 'fine-tuning-llms',
-        title: 'Fine-tuning LLMs for Domain-specific Tasks',
-        date: '2024-03-15',
-        excerpt: 'Exploring techniques for adapting large language models to specialized domains with limited data...',
-        tags: ['LLMs', 'Fine-tuning', 'NLP'],
-        markdownFile: 'blog/fine-tuning-llms.md'
-    },
-    {
-        id: 'ml-deployment',
-        title: 'ML Model Deployment Best Practices',
-        date: '2024-02-28',
-        excerpt: 'A comprehensive guide to deploying machine learning models in production environments...',
-        tags: ['MLOps', 'Deployment', 'Production'],
-        markdownFile: 'blog/ml-deployment.md'
+        id: 'fairness-agnostic-optimization',
+        title: 'Fairness-Agnostic Optimization: Debiasing Datasets with Genetic Algorithms',
+        date: '2024-03-01',
+        excerpt: 'How treating dataset debiasing as a combinatorial subset selection problem allows genetic algorithms to optimize any black-box fairness metric without gradients.',
+        tags: ['Fair ML', 'Genetic Algorithms', 'Optimization', 'Responsible AI'],
+        markdownFile: 'blog/fairness-agnostic-optimization.md'
     }
 ];
 
@@ -37,6 +29,9 @@ const postsPerPage = 2; // Adjust based on layout (2 col)
 
 // Generate blog posts HTML for listing page
 export function generateBlogPostsHTML({ page = 0, all = false } = {}) {
+    const isPagesDir = window.location.pathname.includes('/pages/');
+    const linkPrefix = isPagesDir ? '' : 'pages/';
+
     const sortedPosts = sortBlogPostsByDate();
     let items;
 
@@ -49,12 +44,12 @@ export function generateBlogPostsHTML({ page = 0, all = false } = {}) {
     }
 
     return items.map(post => `
-        <div class="col s12 m6">
-            <div class="card blog-card">
+        <div class="col s12 ${items.length === 1 ? 'm10 offset-m1 l8 offset-l2' : 'm6'}">
+            <div class="card blog-card hoverable">
                 <div class="card-content">
                     <span class="card-title">${post.title}</span>
                     <p class="grey-text">${formatDate(post.date)}</p>
-                    <p>${post.excerpt}</p>
+                    <p class="blog-excerpt">${post.excerpt}</p>
                     ${post.tags ? `
                     <div class="blog-tags">
                         ${post.tags.map(tag => `<div class="chip">${tag}</div>`).join('\n                        ')}
@@ -62,7 +57,7 @@ export function generateBlogPostsHTML({ page = 0, all = false } = {}) {
                     ` : ''}
                 </div>
                 <div class="card-action">
-                    <a href="../pages/blog-post.html?id=${post.id}" class="blue-text">Read More</a>
+                    <a href="${linkPrefix}blog-post.html?id=${post.id}" class="blue-text text-darken-2 font-weight-500">Read Article &rarr;</a>
                 </div>
             </div>
         </div>
@@ -81,14 +76,15 @@ export function initBlogCarousel() {
     const nextBtn = document.getElementById('blog-next');
     const navContainer = document.querySelector('.blog-carousel-nav');
 
+    // Populate display
+    if (blogList) {
+        blogList.innerHTML = generateBlogPostsHTML({ page: 0 });
+    }
+
     // Hide navigation if not enough posts
     if (blogPosts.length <= postsPerPage) {
         if (navContainer) {
             navContainer.style.display = 'none';
-        }
-        // Still render the posts
-        if (blogList) {
-            blogList.innerHTML = generateBlogPostsHTML({ page: 0 });
         }
         return;
     }
@@ -147,7 +143,9 @@ export function getBlogPostById(id) {
 // Load and render markdown content
 export async function loadBlogContent(markdownFile) {
     try {
-        const response = await fetch('../' + markdownFile);
+        const isPagesDir = window.location.pathname.includes('/pages/');
+        const prefix = isPagesDir ? '../' : '';
+        const response = await fetch(prefix + markdownFile);
         const markdown = await response.text();
         return await renderMarkdownWithMarked(markdown);
     } catch (error) {

@@ -24,7 +24,7 @@ async function init() {
     // Populate blog list
     const blogList = document.getElementById('blog-list');
     if (blogList) {
-        blogList.innerHTML = generateBlogPostsHTML();
+        blogList.innerHTML = generateBlogPostsHTML({ all: true });
     }
 }
 
