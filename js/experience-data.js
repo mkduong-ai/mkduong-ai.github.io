@@ -71,7 +71,7 @@ const experiences = [
             'Publishing and presenting research results at conferences',
             'Supervision of <a href="https://dbs.cs.uni-duesseldorf.de/mitarbeiter.php?id=duong" target="_blank">20+ Bachelor and Master theses</a>'
         ],
-        keywords: ['Python', 'Scikit-learn', 'MLOps', 'PyQt5', 'Docker', 'Kubernetes', 'CI/CD', 'Scrum', 'Agile', 'Flask', 'MariaDB', 'JavaScript']
+        keywords: ['Python', 'Scikit-learn', 'MLOps', 'PyQt5', 'Docker', 'Kubernetes', 'CI/CD', 'Scrum', 'Agile', 'Flask', 'MariaDB', 'JavaScript', 'RESTful API', 'Git']
     },
     {
         title: 'Startup Co-Founder',

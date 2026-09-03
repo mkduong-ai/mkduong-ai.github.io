@@ -1,28 +1,28 @@
 ## Project Summary
 
-**RAPP (Responsible Academic Performance Prediction)** is an interdisciplinary AI research and software engineering initiative funded by the German Federal Ministry of Education and Research (**BMBF**, Project No. 16DHB4020, 2021–2024; [Official Website](https://rapp.hhu.de/en/)). 
+**RAPP (Responsible Academic Performance Prediction)** is an interdisciplinary AI research and software engineering research project funded by the German Federal Ministry of Education and Research (**BMBF**, Project No. 16DHB4020, 2021–2024; [Official Website](https://rapp.hhu.de/en/)). 
 
-The project delivered an end-to-end, socially responsible, and privacy-compliant machine learning platform designed to predict academic performance and identify student dropout risks at early semesters. By detecting risk factors proactively, higher education institutions can provide targeted, preventive counseling and support measures.
+The project delivered an end-to-end, socially responsible, and privacy-compliant machine learning platform designed to predict academic performance and identify student dropout risks at early semesters. By detecting risk factors, higher education institutions can provide preventive counseling for students. In simple terms, RAPP helps universities predict dropouts before they happen.
 
-The engineering core of RAPP focused on solving the fundamental dilemmas of algorithmic fairness, opacity, and stakeholder trust in institutional AI systems:
+The engineering core of RAPP focused on solving the fundamental dilemmas of algorithmic fairness, ML opacity, and stakeholder trust in institutional AI systems:
 1. **Bias Mitigation & Fair ML**: Developing algorithms that prevent discriminatory disparities across demographic subgroups (e.g., gender, nationality, socio-economic background).
-2. **Explainable AI (xAI) & Rule Induction**: Delivering transparent white-box models and counterfactual explanations that students and academic advisors can readily understand and audit.
-3. **MLOps & Decision Support Software**: Building production-grade open-source libraries, benchmarking GUI tools, and role-based web dashboards with human-in-the-loop governance.
+2. **Explainable AI (xAI) & Rule Induction**: Delivering white-box models and counterfactual explanations of predictions that students and academic advisors can understand.
+3. **MLOps & Decision Support Software**: Building production-grade open-source libraries, benchmarking GUI tools, and web dashboards for end users in universities.
 
 ---
 
-## Systems & Software Developed
+## Software Developed
 
 ### 1. `fairdo` — Open-Source Python Library for Algorithmic Fairness
-* **PyPI / GitHub**: [`pip install fairdo`](https://github.com/mkduong-ai/fairdo) (Author & Core Maintainer)
+* **PyPI / GitHub**: [`github.com/mkduong-ai/fairdo`](https://github.com/mkduong-ai/fairdo) (Author & Core Maintainer)
 * **Core Functionality**: A modular Python library specifically engineered to measure and mitigate algorithmic bias in tabular datasets.
 * **Non-Binary & Intersectional Fairness**: While standard literature focuses almost exclusively on binary protected attributes, `fairdo` introduces novel pre-processing optimization techniques capable of handling **multi-categorical, non-binary, and multiple protected attributes** simultaneously without degrading predictive accuracy.
-* **Optimization Techniques**: Implements data-driven sample reweighting, fairness-constrained sample removal, and synthetic data generation to equilibrate subgroup representations while maximizing data utility.
+* **Optimization Techniques**: Implements data-driven sample reweighting, fairness-constrained sample removal, and synthetic data generation to equilibrate subgroup representations while maximizing data fidelity.
 * **Standardized Fairness Metrics**: Built-in estimators for **Equalised Odds**, **Demographic Parity (Statistical Parity)**, **Disparate Impact**, and **Individual Fairness**.
 
 ### 2. RAPP-Tool — MLOps GUI & Multi-Objective Model Benchmarking Platform
 * **Repository**: [github.com/hhu-rapp/rapp-tool](https://github.com/hhu-rapp/rapp-tool) (MIT License)
-* **Dataset Generation & SQL Integration**: Provides an interactive desktop interface allowing researchers and data engineers to construct custom training datasets directly via dynamic SQL queries against relational student databases.
+* **Dataset Generation & SQL Integration**: Provides an interactive desktop interface allowing researchers and data engineers to construct custom training datasets directly via SQL queries.
 * **Automated Training & Evaluation Pipeline**: Automated training, hyperparameter tuning, and cross-validation across a diverse suite of machine learning models:
   * Decision Trees (CART, C4.5)
   * Random Forests & Gradient Boosted Trees
@@ -42,51 +42,51 @@ The engineering core of RAPP focused on solving the fundamental dilemmas of algo
 
 ---
 
-## Machine Learning & Explainability (xAI) Architecture
+## ML-driven Decision Support System Pipeline
 
 ```
-                  ┌─────────────────────────────────────────────────────────┐
-                  │          Relational Student Database & Surveys          │
-                  │       (Pseudonymized Grades, ECTS, Sociodemographics)   │
-                  └────────────────────────────┬────────────────────────────┘
-                                               │
-                                               ▼
-                  ┌─────────────────────────────────────────────────────────┐
-                  │                 fairdo Pre-processing                   │
-                  │   • Multi-Attribute Bias Measurement (Equalised Odds)   │
-                  │   • Synthetic Data Generation & Sample Optimization    │
-                  └────────────────────────────┬────────────────────────────┘
-                                               │
-                                               ▼
-                  ┌─────────────────────────────────────────────────────────┐
-                  │                 RAPP-Tool MLOps Engine                  │
-                  │   • Model Training (Trees, SVM, PyTorch MLP, Regr)     │
-                  │   • Multi-Objective Pareto-Front Optimization           │
-                  └────────────────────────────┬────────────────────────────┘
-                                               │
-                                               ▼
-                  ┌─────────────────────────────────────────────────────────┐
-                  │           Explainable AI (xAI) & Rule Induction         │
-                  │   • White-box Decision Tree Branch Traversal           │
-                  │   • Minimal Counterfactual Explanation Generation       │
-                  └────────────────────────────┬────────────────────────────┘
-                                               │
-                                               ▼
-                  ┌─────────────────────────────────────────────────────────┐
-                  │               RAPP WebApp Decision Support              │
-                  │   • Role-Based Access Control (RBAC) & GDPR Security    │
-                  │   • Traffic-Light Risk Scores + Human-in-the-Loop       │
-                  └─────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────┐
+│          Relational Student Database & Surveys          │
+│       (Pseudonymized Grades, ECTS, Sociodemographics)   │
+└────────────────────────────┬────────────────────────────┘
+                             │
+                             ▼
+┌─────────────────────────────────────────────────────────┐
+│                 fairdo Pre-processing                   │
+│   • Multi-Attribute Bias Measurement (Equalised Odds)   │
+│   • Synthetic Data Generation & Sample Optimization     │
+└────────────────────────────┬────────────────────────────┘
+                             │
+                             ▼
+┌─────────────────────────────────────────────────────────┐
+│                 RAPP-Tool MLOps Engine                  │
+│   • Model Training (Decision Trees, SVM, MLP, ...)      │
+│   • Multi-Objective Pareto-Front Optimization           │
+└────────────────────────────┬────────────────────────────┘
+                             │
+                             ▼
+┌─────────────────────────────────────────────────────────┐
+│           Explainable AI (xAI) & Rule Induction         │
+│   • White-box Decision Tree Branch Traversal            │
+│   • Minimal Counterfactual Explanation Generation       │
+└────────────────────────────┬────────────────────────────┘
+                             │
+                             ▼
+┌─────────────────────────────────────────────────────────┐
+│               RAPP WebApp Decision Support              │
+│   • Role-Based Access Control (RBAC) & GDPR Security    │
+│   • Traffic-Light Risk Scores + Human-in-the-Loop       │
+└─────────────────────────────────────────────────────────┘
 ```
 
-### Worldview Formulation: WYSIWYG & Equalised Odds
+<!-- ### Worldview Formulation: WYSIWYG & Equalised Odds
 * Conducted theoretical and empirical investigations into algorithmic fairness worldviews (*"We're All Equal"* vs. *"What You See Is What You Get"*).
-* Proved that in university performance prediction, prior examination records are already established administrative facts. Under this formulation, adopting the **WYSIWYG** worldview and optimizing for **Equalised Odds** mathematically prevents the inadvertent introduction of reverse discrimination.
+* Proved that in university performance prediction, prior examination records are already established administrative facts. Under this formulation, adopting the **WYSIWYG** worldview and optimizing for **Equalised Odds** mathematically prevents the inadvertent introduction of reverse discrimination. -->
 
 ### White-Box Interpretable Models & Counterfactuals
 * Rather than relying on opaque deep neural networks paired with unstable post-hoc approximations (such as LIME or SHAP, which can obscure critical biases), RAPP prioritized **inherently interpretable Decision Trees**.
 * **Rule Induction**: Extracted transparent if-then decision paths from tree branches, showing users the exact criteria leading to a risk score.
-* **Counterfactual Explanations**: Calculated minimal actionable feature adjustments (e.g., *"Earning 12 additional ECTS in Semester 2 shifts the prediction from at-risk to on-track"*), giving students and counselors tangible guidance.
+* **Counterfactual Explanations**: Calculated minimal actionable feature adjustments (e.g., *"Earning 12 additional ECTS in Semester 2 shifts the prediction from at-risk to on-track"*).
 * Empirical benchmark results demonstrated that Decision Trees consistently matched or outperformed complex black-box classifiers while remaining on the Pareto frontier for both Balanced Accuracy and fairness metrics.
 
 ### Key Target Variables Modeled
@@ -101,7 +101,7 @@ The engineering core of RAPP focused on solving the fundamental dilemmas of algo
 ## Data Engineering, Privacy & GDPR Governance
 
 * **Longitudinal Data Harmonization**: Engineered a secure data pipeline merging pseudonymized administrative examination records from Heinrich Heine University Düsseldorf with 3 waves of longitudinal socio-demographic surveys (150+ variables covering educational background, social capital, commuter times, self-efficacy, and study intentions).
-* **Privacy by Design & GDPR Compliance**: Worked directly with university Data Protection Officers (DPO) to formulate strict data governance protocols, pseudonymization keys, and encrypted storage deployed exclusively on EU-based university infrastructure.
+* **Privacy by Design & GDPR Compliance**: Worked directly with university Data Protection Officers (*Datenschutzbeauftragte*) to formulate strict data governance protocols, pseudonymization keys, and encrypted storage deployed exclusively on EU-based university infrastructure.
 
 ---
 
@@ -109,8 +109,8 @@ The engineering core of RAPP focused on solving the fundamental dilemmas of algo
 
 The RAPP project was structured across three collaborative work packages:
 * **AP1 (Computer Science — Core Development & Modeling)**: Led model training, fairness algorithms, xAI rule induction, `fairdo`, RAPP-Tool, and RAPP WebApp.
-* **AP2 (Sociology — Ethical Requirements & Data Gathering)**: Conducted 35+ qualitative expert interviews with university stakeholders and executed 3 survey waves.
-* **AP3 (Communication Science — Fairness Perception & Experiments)**: Developed a multidimensional scale for perceived algorithmic fairness and conducted randomized lab and field experiments.
+* **AP2 (Sociology — Ethical Requirements & Data Gathering)**: Conducted 35+ qualitative expert interviews with university stakeholders and executed 3 survey waves of students.
+* **AP3 (Communication Science — Fairness Perception & Experiments)**: Developed a multidimensional scale for perceived algorithmic fairness and conducted randomized field experiments.
 
 Conducted structured stakeholder workshops with university leadership (Vice-President for Teaching, Central Student Advisory Service, Deans of Studies, and Student Council representatives) to gather operational requirements and align software capabilities with real institutional workflows.
 
@@ -118,18 +118,18 @@ Conducted structured stakeholder workshops with university leadership (Vice-Pres
 
 ## Peer-Reviewed Publications & Research Output
 
-The methodologies and software developed in RAPP were presented and published in leading peer-reviewed venues:
+The methodologies and software developed in RAPP were presented and published in international peer-reviewed venues:
 
 * **BTW 2023**: *RAPP: A Responsible Academic Performance Prediction Tool for Decision-Making in Educational Institutes* — Duong, M. K., Dunkelau, J., Cordova, J. A., Conrad, S.
 * **DaWaK 2023 (Springer LNCS)**: *Dealing with Data Bias in Classification: Can Generated Data Ensure Representation and Fairness?* — Duong, M. K., Conrad, S.
-* **AusDM 2023 (Springer)**: *Towards Fairness and Privacy: A Novel Data Pre-processing Optimization Framework for Non-binary Protected Attributes* — Duong, M. K., Conrad, S.
+* **AusDM 2023 (Springer CCIS)**: *Towards Fairness and Privacy: A Novel Data Pre-processing Optimization Framework for Non-binary Protected Attributes* — Duong, M. K., Conrad, S.
 * **ECAI 2024 (IOS Press)**: *(Un)certainty of (Un)fairness: Preference-Based Selection of Certainly Fair Decision-Makers* — Duong, M. K., Conrad, S.
 * **AEQUITAS 2024 (CEUR)**: *Measuring and Mitigating Bias for Tabular Datasets with Multiple Protected Attributes* — Duong, M. K., Conrad, S.
 * **DaWaK 2024 (Springer LNCS)**: *Trusting Fair Data: Leveraging Quality in Fairness-Driven Data Removal Techniques* — Duong, M. K., Conrad, S.
 * **FATED @ EDM 2022**: *Towards Equalised Odds as Fairness Metric in Academic Performance Prediction* — Dunkelau, J., Duong, M. K.
 
 ---
-
+<!-- 
 ## Recruiter & Technical Keyword Matrix
 
 | Competency Area | Keywords & Technologies |
@@ -139,9 +139,7 @@ The methodologies and software developed in RAPP were presented and published in
 | **Machine Learning & Modeling** | Supervised Learning, Classification & Regression, Multi-Objective Pareto Optimization, Scikit-learn, PyTorch, Random Forests, SVM, KNN, Linear Regression |
 | **Software & Open Source** | Python, `pip`/PyPI Packaging (`fairdo`), GUI Desktop App Development, Full-Stack Web Development, Materialize CSS, RESTful APIs, Git, Docker, CI/CD |
 | **Data Engineering & Databases** | SQL, Relational Database Modeling, PostgreSQL, Pandas, NumPy, Data Pipeline Architecture, Longitudinal Data Processing, Pseudonymization |
-| **Governance & Leadership** | BMBF Research Grant Delivery, GDPR / Privacy by Design, Human-in-the-Loop (HITL), Stakeholder Requirements Engineering, Peer-Reviewed Scientific Publishing |
-
----
+| **Governance & Leadership** | BMBF Research Grant Delivery, GDPR / Privacy by Design, Human-in-the-Loop (HITL), Stakeholder Requirements Engineering, Peer-Reviewed Scientific Publishing | -->
 
 ## References & Links
 
