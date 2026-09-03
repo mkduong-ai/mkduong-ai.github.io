@@ -1,10 +1,31 @@
-// Render markdown using marked.js library (with fallback to basic renderer)
+// Ensure KaTeX is loaded dynamically
+async function ensureKatex() {
+    if (!window.katex) {
+        // Load KaTeX CSS
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css';
+        document.head.appendChild(link);
+
+        // Load KaTeX JS
+        const katexModule = await import('https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.mjs');
+        window.katex = katexModule.default;
+    }
+    return window.katex;
+}
+
+// Render markdown using marked.js library with KaTeX math pre-processing
 export async function renderMarkdownWithMarked(markdown) {
     try {
-        // Try to use marked.js from CDN
-        const { marked } = await import('https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js');
+        const [{ marked }, katex] = await Promise.all([
+            import('https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js'),
+            ensureKatex().catch(err => {
+                console.warn('KaTeX failed to load:', err);
+                return null;
+            })
+        ]);
 
-        // Configure marked for better code highlighting
+        // Configure marked options
         marked.setOptions({
             breaks: true,
             gfm: true,
@@ -12,68 +33,60 @@ export async function renderMarkdownWithMarked(markdown) {
             mangle: false
         });
 
-        // Parse markdown to HTML
-        let html = marked.parse(markdown);
-
-        // Render LaTeX equations using KaTeX
-        html = await renderLatexEquations(html);
-
-        return html;
-    } catch (error) {
-        console.warn('Marked.js failed to load, falling back to basic renderer:', error);
-        return renderMarkdown(markdown);
-    }
-}// Render LaTeX equations using KaTeX
-
-export async function renderLatexEquations(html) {
-    try {
-        // Load KaTeX dynamically
-        if (!window.katex) {
-            // Load KaTeX CSS
-            const link = document.createElement('link');
-            link.rel = 'stylesheet';
-            link.href = 'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css';
-            document.head.appendChild(link);
-
-            // Load KaTeX JS
-            const katexModule = await import('https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.mjs');
-            window.katex = katexModule.default;
+        if (!katex) {
+            return marked.parse(markdown);
         }
 
-        // Replace display math ($$...$$)
-        html = html.replace(/\$\$([\s\S]+?)\$\$/g, (match, equation) => {
+        const mathPlaceholders = [];
+
+        // 1. Extract and pre-render display math ($$...$$) before marked parses backslashes
+        let processedMarkdown = markdown.replace(/\$\$([\s\S]+?)\$\$/g, (match, equation) => {
             try {
-                return window.katex.renderToString(equation.trim(), {
+                const rendered = katex.renderToString(equation.trim(), {
                     displayMode: true,
                     throwOnError: false
                 });
+                const placeholder = `KATEXPLACEHOLDERDISPLAY${mathPlaceholders.length}XYZ`;
+                mathPlaceholders.push({ placeholder, rendered });
+                return `\n\n${placeholder}\n\n`;
             } catch (e) {
                 console.error('KaTeX display math error:', e);
                 return match;
             }
         });
 
-        // Replace inline math ($...$)
-        html = html.replace(/\$([^\$\n]+?)\$/g, (match, equation) => {
+        // 2. Extract and pre-render inline math ($...$)
+        processedMarkdown = processedMarkdown.replace(/\$([^\$\n]+?)\$/g, (match, equation) => {
             try {
-                return window.katex.renderToString(equation.trim(), {
+                const rendered = katex.renderToString(equation.trim(), {
                     displayMode: false,
                     throwOnError: false
                 });
+                const placeholder = `KATEXPLACEHOLDERINLINE${mathPlaceholders.length}XYZ`;
+                mathPlaceholders.push({ placeholder, rendered });
+                return placeholder;
             } catch (e) {
                 console.error('KaTeX inline math error:', e);
                 return match;
             }
         });
 
+        // 3. Parse markdown into HTML
+        let html = marked.parse(processedMarkdown);
+
+        // 4. Substitute rendered KaTeX math back into the HTML safely using a replacer function
+        for (const { placeholder, rendered } of mathPlaceholders) {
+            html = html.replaceAll(placeholder, () => rendered);
+        }
+
         return html;
     } catch (error) {
-        console.warn('KaTeX failed to load, equations will not be rendered:', error);
-        return html;
+        console.warn('Marked.js failed to load, falling back to basic renderer:', error);
+        return renderMarkdown(markdown);
     }
 }
-// Simple markdown renderer (basic support) - FALLBACK ONLY
 
+// Simple fallback renderer if marked.js fails
 export function renderMarkdown(markdown) {
     let html = markdown;
 
@@ -111,4 +124,3 @@ export function renderMarkdown(markdown) {
 
     return html;
 }
-

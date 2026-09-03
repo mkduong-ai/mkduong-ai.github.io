@@ -6,17 +6,17 @@ To solve this, I introduced the concept of **"Fairness-Agnostic"** optimization 
 
 ---
 
-## The Key Idea: The Dataset as a Gene of 0s and 1s
+## The Key Idea: The Dataset as a Chromosome of 0s and 1s
 
 Instead of redesigning a new algorithm for every fairness formula, we formulate dataset debiasing as a **combinatorial subset selection problem**:
 
-1. Given a dataset $S = \{s_1, s_2, \dots, s_n\}$ of $n$ samples.
-2. We define a binary decision vector $b = (b_1, b_2, \dots, b_n) \in \{0, 1\}^n$, where:
+1. Given a dataset $S = \lbrace s_1, s_2, \dots, s_n \rbrace$ of $n$ samples.
+2. We define a binary decision vector $b = (b_1, b_2, \dots, b_n) \in \lbrace 0, 1 \rbrace^n$, where:
    * **$b_i = 1$**: Keep sample $s_i$ in the fair dataset $D_{\text{fair}}$.
    * **$b_i = 0$**: Remove sample $s_i$.
-3. Our goal is simply to find the binary sequence (the "gene") that minimizes an arbitrary discrimination function $\psi(D_{\text{fair}})$:
+3. Our goal is simply to find the binary sequence (the "chromosome") that minimizes an arbitrary discrimination function $\psi(D_{\text{fair}})$:
 
-$$\min_{b \in \{0, 1\}^n} \psi(D_{\text{fair}})$$
+$$\min_{b \in \lbrace 0, 1 \rbrace^n} \psi(D_{\text{fair}})$$
 
 ![Genetic Algorithm Subset Selection](../img/fairness-gene-selection.svg)
 
@@ -41,11 +41,11 @@ We evaluated our genetic algorithm framework across standard benchmark datasets 
 
 Here is an excerpt of the discrimination scores (**Sum of Statistical Disparities**, lower is better) comparing the original unmitigated data against the subset selected by our Genetic Algorithm (Elitist selection):
 
-| Dataset | Protected Attribute | Original Bias | Random Baseline | **Our Method (Genetic Algorithm)** | Bias Reduction |
-| :--- | :--- | :---: | :---: | :---: | :---: |
-| **Adult** | Race (5 groups) | `0.97` | `0.71` | **`0.25`** | **-74.2%** |
-| **COMPAS** | Race (6 groups) | `1.89` | `0.72` | **`0.20`** | **-89.4%** |
-| **Bank** | Job (12 groups) | `4.81` | `4.07` | **`1.41`** | **-70.7%** |
+| Dataset | Protected Attribute | Original Bias | **Our Method** | Bias Reduction (relative) |
+| :--- | :--- | :---: | :---: | :---: |
+| **Adult** | Race (5 groups) | `0.97` |**`0.25`** | **-74.2%** |
+| **COMPAS** | Race (6 groups) | `1.89` | **`0.20`** | **-89.4%** |
+| **Bank** | Job (12 groups) | `4.81` | **`1.41`** | **-70.7%** |
 
 *All experiments were averaged over 15 independent runs with minimal runtime (under a few minutes on up to 41,000+ records).*
 
