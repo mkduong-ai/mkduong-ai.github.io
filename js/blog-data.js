@@ -5,7 +5,7 @@ const blogPosts = [
     {
         id: 'fairness-agnostic-optimization',
         title: 'Fairness-Agnostic Optimization: Debiasing Datasets with Genetic Algorithms',
-        date: '2024-03-01',
+        date: '2026-09-03',
         excerpt: 'How treating dataset debiasing as a combinatorial subset selection problem allows genetic algorithms to optimize any black-box fairness metric without gradients.',
         tags: ['Fair ML', 'Genetic Algorithms', 'Optimization', 'Responsible AI'],
         markdownFile: 'blog/fairness-agnostic-optimization.md'
