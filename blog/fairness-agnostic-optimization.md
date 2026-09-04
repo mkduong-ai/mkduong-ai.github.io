@@ -68,12 +68,18 @@ pip install fairdo
 ```
 
 ```python
-from fairdo.preprocessing import GeneticAlgorithm
-from fairdo.metrics import statistical_disparity
+from fairdo.preprocessing import DefaultPreprocessing
+from fairdo.utils.dataset import load_data
 
-# Automatically find the fair subset mask
-preprocessor = GeneticAlgorithm(metric=statistical_disparity)
-X_fair, y_fair, z_fair = preprocessor.fit_transform(X, y, z)
+# Load dataset (pandas DataFrame)
+data, label, protected_attributes = load_data('compas', print_info=False)
+
+# Automatically find the fair subset using Genetic Algorithm
+preprocessor = DefaultPreprocessing(
+    protected_attribute=protected_attributes[0],
+    label=label
+)
+data_fair = preprocessor.fit_transform(dataset=data)
 ```
 
 * **Paper**: [Towards Fairness and Privacy: A Novel Data Pre-processing Optimization Framework for Non-binary Protected Attributes (Springer)](https://doi.org/10.1007/978-981-99-8696-5_8)
