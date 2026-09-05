@@ -14,6 +14,7 @@ Instead of redesigning a new algorithm for every fairness formula, we formulate 
 2. We define a binary decision vector $b = (b_1, b_2, \dots, b_n) \in \lbrace 0, 1 \rbrace^n$, where:
    * **$b_i = 1$**: Keep sample $s_i$ in the fair dataset $D_{\text{fair}}$.
    * **$b_i = 0$**: Remove sample $s_i$.
+   * Thus, the fair dataset is defined as **$D_{\text{fair}} = \lbrace s_i \in S \mid b_i = 1 \rbrace \subseteq S$**
 3. Our goal is simply to find the binary sequence (the "chromosome") that minimizes an arbitrary discrimination function $\psi(D_{\text{fair}})$:
 
 $$\min_{b \in \lbrace 0, 1 \rbrace^n} \psi(D_{\text{fair}})$$
@@ -55,7 +56,7 @@ Here is an excerpt of the discrimination scores (**Sum of Statistical Disparitie
 
 1. **Fairness-Agnostic Flexibility**: Treat any fairness metric as a black-box evaluator. Plug in any group fairness, individual fairness, or custom metric without changing the solver.
 2. **Beyond Binary Groups**: Works seamlessly with multi-group and intersectional attributes.
-3. **Data Privacy Use Case**: The framework also allows optimizing over purely synthetic datasets ($S = G$) or merging real and synthetic data ($S = D \cup G$), allowing organizations to share debiased data without leaking sensitive real records.
+3. **Data Privacy Use Case**: The framework also allows optimizing over purely synthetic datasets ($S = \text{Synthetic Data}$) or merging real with synthetic data ($S = \text{Real Data} \cup \text{Synthetic Data}$), allowing data providers to share debiased data without leaking sensitive real records.
 
 ---
 
