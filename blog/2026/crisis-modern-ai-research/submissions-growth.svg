@@ -50,9 +50,9 @@
 <circle cx="623.8" cy="305.7" r="5" fill="#ffffff" stroke="#4f46e5" stroke-width="3" />
 <circle cx="714.4" cy="240.9" r="5" fill="#ffffff" stroke="#4f46e5" stroke-width="3" />
 <circle cx="805.0" cy="91.1" r="5" fill="#ffffff" stroke="#4f46e5" stroke-width="3" />
-<rect x="667.0" y="57.10731249999998" width="130" height="26" rx="4" fill="#4f46e5" />
-<text x="732.0" y="74.10731249999998" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">Total: 74,843</text>
-<line x1="797.0" y1="70.10731249999998" x2="803.0" y2="85.10731249999998" stroke="#4f46e5" stroke-width="2" />
+<rect x="664.0" y="56.0" width="133" height="28" rx="4" fill="#4f46e5" />
+<text x="730.5" y="75.0" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">Total: 74,843</text>
+<line x1="797.0" y1="70.0" x2="803.0" y2="85.10731249999998" stroke="#4f46e5" stroke-width="2" />
 <polyline points="80.0,445.4 170.6,435.9 261.2,422.1 351.9,423.8 442.5,417.3 533.1,407.5 623.8,390.7 714.4,360.8 805.0,311.0" fill="none" stroke="#1d4ed8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
 <circle cx="80.0" cy="445.4" r="4.5" fill="#ffffff" stroke="#1d4ed8" stroke-width="2.2" />
 <circle cx="170.6" cy="435.9" r="4.5" fill="#ffffff" stroke="#1d4ed8" stroke-width="2.2" />
@@ -83,21 +83,21 @@
 <circle cx="623.8" cy="433.0" r="4.5" fill="#ffffff" stroke="#dc2626" stroke-width="2.2" />
 <circle cx="714.4" cy="411.5" r="4.5" fill="#ffffff" stroke="#dc2626" stroke-width="2.2" />
 <circle cx="805.0" cy="371.2" r="4.5" fill="#ffffff" stroke="#dc2626" stroke-width="2.2" />
-<text x="813.0" y="303.0" text-anchor="end" font-size="11.5" font-weight="bold" fill="#1d4ed8">NeurIPS: 31,400*</text>
-<text x="813.0" y="340.9" text-anchor="end" font-size="11.5" font-weight="bold" fill="#0f766e">ICML: 23,918</text>
-<text x="813.0" y="388.2" text-anchor="end" font-size="11.5" font-weight="bold" fill="#dc2626">ICLR: 19,525</text>
-<rect x="90" y="75" width="490" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+<text x="813.0" y="303.0" text-anchor="end" font-size="14" font-weight="bold" fill="#1d4ed8">NeurIPS: 31,400*</text>
+<text x="813.0" y="340.9" text-anchor="end" font-size="14" font-weight="bold" fill="#0f766e">ICML: 23,918</text>
+<text x="813.0" y="388.2" text-anchor="end" font-size="14" font-weight="bold" fill="#dc2626">ICLR: 19,525</text>
+<rect x="90" y="74" width="450" height="38" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
 <line x1="106" y1="93" x2="126" y2="93" stroke="#4f46e5" stroke-width="3.5" />
 <circle cx="116" cy="93" r="3.5" fill="#ffffff" stroke="#4f46e5" stroke-width="2" />
-<text x="132" y="97" font-size="11.5" font-weight="600" fill="#4f46e5">Total Combined</text>
-<line x1="224" y1="93" x2="244" y2="93" stroke="#1d4ed8" stroke-width="2.4" />
-<circle cx="234" cy="93" r="3.5" fill="#ffffff" stroke="#1d4ed8" stroke-width="2" />
-<text x="250" y="97" font-size="11.5" font-weight="600" fill="#1d4ed8">NeurIPS</text>
-<line x1="342" y1="93" x2="362" y2="93" stroke="#0f766e" stroke-width="2.4" />
-<circle cx="352" cy="93" r="3.5" fill="#ffffff" stroke="#0f766e" stroke-width="2" />
-<text x="368" y="97" font-size="11.5" font-weight="600" fill="#0f766e">ICML</text>
-<line x1="460" y1="93" x2="480" y2="93" stroke="#dc2626" stroke-width="2.4" />
-<circle cx="470" cy="93" r="3.5" fill="#ffffff" stroke="#dc2626" stroke-width="2" />
-<text x="486" y="97" font-size="11.5" font-weight="600" fill="#dc2626">ICLR</text>
-<text x="80" y="514" text-anchor="start" font-size="10" fill="#94a3b8">*2026 numbers include finalized counts (ICLR: 19,525, ICML: 23,918) and community estimates from OpenReview / Reddit (NeurIPS: ~31,400).</text>
+<text x="132" y="98" font-size="14" font-weight="600" fill="#4f46e5">Total Combined</text>
+<line x1="262" y1="93" x2="282" y2="93" stroke="#1d4ed8" stroke-width="2.4" />
+<circle cx="272" cy="93" r="3.5" fill="#ffffff" stroke="#1d4ed8" stroke-width="2" />
+<text x="288" y="98" font-size="14" font-weight="600" fill="#1d4ed8">NeurIPS</text>
+<line x1="368" y1="93" x2="388" y2="93" stroke="#0f766e" stroke-width="2.4" />
+<circle cx="378" cy="93" r="3.5" fill="#ffffff" stroke="#0f766e" stroke-width="2" />
+<text x="394" y="98" font-size="14" font-weight="600" fill="#0f766e">ICML</text>
+<line x1="452" y1="93" x2="472" y2="93" stroke="#dc2626" stroke-width="2.4" />
+<circle cx="462" cy="93" r="3.5" fill="#ffffff" stroke="#dc2626" stroke-width="2" />
+<text x="478" y="98" font-size="14" font-weight="600" fill="#dc2626">ICLR</text>
+<text x="00" y="520" text-anchor="start" font-size="13" fill="#94a3b8">*2026 numbers include finalized counts (ICLR: 19,525, ICML: 23,918) and community estimates from OpenReview / Reddit (NeurIPS: ~31,400).</text>
 </svg>

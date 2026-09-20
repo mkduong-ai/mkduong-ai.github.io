@@ -3,12 +3,12 @@ import { renderMarkdownWithMarked } from './markdown-renderer.js';
 // Blog posts data configuration
 const blogPosts = [
     {
-        id: 'the-hype-treadmill-in-aiml',
+        id: 'crisis-modern-ai-research',
         title: 'The Crisis of Modern AI Research',
         date: '2026-09-20',
         excerpt: 'Modern AI research is facing a crisis: AI research is most prone to AI-written papers. Top-tier conferences now receive over 50,000 submissions where the main topic is about LLMs. We\'re trapped in an exploitation loop where foundational work is being drowned out by hype.',
         tags: ['AI Research', 'Machine Learning', 'Optimization', 'Meta-Science', 'Peer Review'],
-        markdownFile: 'blog/2026/the-hype-treadmill-in-aiml/the-hype-treadmill-in-aiml.md'
+        markdownFile: 'blog/2026/crisis-modern-ai-research/crisis-modern-ai-research.md'
     },
     {
         id: 'fairness-agnostic-optimization',

@@ -34,7 +34,7 @@ Currently, the AI/ML community is trapped in an extreme **exploitation phase**:
 
 1. **Monoculture of LLMs**: An overwhelming proportion of compute, funding, and authorship is spent fine-tuning, prompting, and assembling wrappers around LLMs. Specifically, only one type of LLM: **Transformers**.
 2. **Acceptance Rate Disparities**: Trending topics like LLMs catch the attention of reviewers and as a result, they have higher acceptance rates than non-trending ones. So naturally, researchers will focus on trending topics to increase their chances of getting accepted. This is a vicious cycle.
-3. **The Exploration Penalty**: Venturing into different paradigms—such as symbolic reasoning, non-gradient optimization, black-box optimization, or evolutionary algorithms—imposes a massive exploratory risk. Reviewers unaccustomed to these methods often penalize such submissions for not benchmarking against a 100-billion parameter foundation model—even if the task is not suited for LLMs.
+3. **The Exploration Penalty**: Venturing into different paradigms—such as symbolic reasoning, non-gradient optimization, black-box optimization, or evolutionary algorithms—imposes a massive exploratory risk. *Reviewers unaccustomed to these methods often penalize such submissions for not benchmarking against a 100-billion parameter foundation model—even if the task is not suited for LLMs.*
 
 The field thus risks being stuck in a suboptimal local optimum while missing entirely new scientific discoveries in the vast space of possible solutions.
 
@@ -46,7 +46,7 @@ One of the most damaging pathologies in peer review is the dismissal of elegant 
 
 > *"The proposed method is too simple/easy. The technical contribution lacks complexity."*
 
-I have received this type of review too many times and it's one of the most illogical reviews ever. In mathematics, optimization, and traditional computer science, **simplicity is the key**. If an algorithm requires only 10 lines of closed-form algebra to solve a task with deterministic guarantees, that is not a defect. **Many AI researchers are too used to simply running some deep learning model through a problem**. This may work for many (or even all) cases because neural nets are universal function approximators. But this does not mean that this complex solution is *clever*. In fact, it is the opposite.
+I have received this type of review too many times and it's preventing AI research from moving forward. In mathematics, optimization, and traditional computer science, **simplicity is the key**. If an algorithm requires only 10 lines of closed-form algebra to solve a task with deterministic guarantees, that is not a defect. **Many AI researchers have gotten too used to throwing a deep learning model at a problem**. This may work for many (or even all) cases because neural nets are *universal function approximators*. But this does not mean that this complex solution is *clever*. In fact, it is the opposite.
 
 ![The Reviewer Rejection Paradox](stickman-reviewer-overengineering.jpg)
 
@@ -54,7 +54,7 @@ I have received this type of review too many times and it's one of the most illo
 
 Would you use an LLM as a calculator to compute $a+b$ for any numbers $a,b$? Of course not. But this is what many researchers do. They use LLMs to solve problems that can be solved with exact, closed-form methods. LLMs are still probabilistic models, **there is no guarantee of a correct answer**.
 
-But fine-tuning a **generative pre-trained Transformer (GPT) model** with **reinforcement learning from human feedback (RLHF)** to compute $a+b$ for any numbers $a,b$ sounds more complex and thus more "scientific" to reviewers.
+But fine-tuning a **quantized Mixture-of-Experts (MoE) generative pre-trained Transformer (GPT) model** with **reinforcement learning from human feedback (RLHF)** to compute $a+b$ for any numbers $a,b$ sounds more "scientific" to reviewers.
 
 ---
 
@@ -62,7 +62,7 @@ But fine-tuning a **generative pre-trained Transformer (GPT) model** with **rein
 
 Underneath the explosion of 50,000+ submissions per conference (e.g., ICLR 2027) lies an institutional crisis: the total breakdown of the peer review mechanism.
 
-As submission volumes scale exponentially, conference program chairs are forced to recruit an increasingly novice reviewer pool. Many of these newer reviewers have spent their entire school and university years working with LLMs to get through their studies. Unsurprisingly, they favor submissions that match their mental model: large models, heavy compute, and trendy buzzwords.
+As submission volumes scale exponentially, conference program chairs are forced to recruit an increasingly novice reviewer pool. Many of these newer reviewers have spent their entire school and university years working with LLMs to get through their studies. Unsurprisingly, there is a risk that they may overuse LLMs to review papers and favor submissions that deal with large models.
 
 Hence, the ML community is uniquely vulnerable to **AI Slop**:
 
@@ -70,9 +70,9 @@ Hence, the ML community is uniquely vulnerable to **AI Slop**:
 
 Unlike other fields where researchers may use AI tools sporadically, AI researchers are power users. Setting up and automating most of the paper writing process with LLMs is not a hurdle for AI researchers. This creates an absurd closed loop:
 
-1. **Automated Paper Generation**: Authors use agents to generate 10-page papers with bloated introductions, boilerplate methodologies, and hallucinated citations.
-2. **Reviewer Fatigue**: Assigned multiple manuscripts with unrealistic deadlines, overwhelmed reviewers prompt LLMs to summarize the submissions and generate reviews.
-3. **The Ping-Pong Game**: **AI writes the paper, and AI reviews the paper.**
+1. **AI-assisted papers**: Authors use agents to generate 10-page papers with bloated introductions, boilerplate methodologies, and hallucinated citations.
+2. **AI-assisted reviews**: Reviewers are assigned multiple manuscripts with unrealistic deadlines. Overwhelmed reviewers prompt LLMs to summarize the submissions and generate reviews.
+3. **The AI-vs-AI Feedback Loop**: **AI writes the paper, and AI reviews the paper.** It is like letting AI play with itself.
 
 When generative models review the outputs of other generative models, journals and conference proceedings are not safe from becoming a collection of AI-generated slop papers.
 
@@ -80,7 +80,7 @@ When generative models review the outputs of other generative models, journals a
 
 ## Key Takeaways
 
-1. **Exploration Over Exploitation**: Chasing trendy topics keeps us trapped in a local optimum. Long-term breakthroughs require exploring unconventional paradigms beyond current dominant trends.
-2. **Simplicity Over Complexity**: If a 10-line exact algorithm solves the problem, it is superior to a 100B-parameter wrapper. "Method is too simple" should never be an excuse for rejection.
-3. **Exact Guarantees Over Probabilistic Guesses**: Neural nets can approximate anything, but approximations have no guarantees. When exact closed-form math or traditional optimization works, use it.
-4. **AI Research is in a Critical Phase**: With submission counts exploding, the field rewards tool automation over deep inquiry. Peer review requires human intellect—if we let AI write papers and AI review them, scientific literature loses its credibility.
+1. **AI Research is in a Critical Phase**: Exploding submissions lead to overusing AI tools for both research and review, peer review becomes more noisy, and the AI field itself is prone to AI power users. Scientific literature loses credibility.
+1. **Exploration Over Exploitation**: Chasing trendy topics keeps us trapped in a local optimum. Long-term breakthroughs require exploring unconventional paradigms beyond dominant trends. Reviewers should accept unconventional submissions to promote new ideas.
+1. **Simplicity Over Complexity**: If a 10-line exact algorithm solves the problem, it is superior to a 100B-parameter wrapper. "Method is too simple" should never be an excuse for rejection.
+1. **Exact Guarantees Over Probabilistic Guesses**: Neural nets can approximate anything, but approximations have no guarantees. When exact closed-form math or traditional optimization works, use it.
