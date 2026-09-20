@@ -19,7 +19,7 @@ Instead of redesigning a new algorithm for every fairness formula, we formulate 
 
 $$\min_{b \in \lbrace 0, 1 \rbrace^n} \psi(D_{\text{fair}})$$
 
-![Genetic Algorithm Subset Selection](../img/fairness-gene-selection.svg)
+![Genetic Algorithm Subset Selection](fairness-gene-selection.svg)
 
 ---
 

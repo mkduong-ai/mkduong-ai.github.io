@@ -117,3 +117,13 @@
     color: var(--primary);
     font-size: 0.85rem;
 }
+
+/* Blog Images Responsive Styles */
+.blog-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 30px auto;
+    border-radius: 6px;
+    box-sizing: border-box;
+}

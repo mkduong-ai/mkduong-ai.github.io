@@ -15,7 +15,8 @@ async function ensureKatex() {
 }
 
 // Render markdown using marked.js library with KaTeX math pre-processing
-export async function renderMarkdownWithMarked(markdown) {
+export async function renderMarkdownWithMarked(markdown, options = {}) {
+    const { assetBaseUrl = '' } = options;
     try {
         const [{ marked }, katex] = await Promise.all([
             import('https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js'),
@@ -25,22 +26,57 @@ export async function renderMarkdownWithMarked(markdown) {
             })
         ]);
 
-        // Configure marked options
+        // Configure marked options with responsive image and external link renderer
+        const renderer = new marked.Renderer();
+        renderer.image = (arg1, title, text) => {
+            let href = arg1;
+            let alt = text;
+            if (typeof arg1 === 'object' && arg1 !== null) {
+                href = arg1.href;
+                alt = arg1.text || '';
+            }
+            return `<img src="${href}" alt="${alt || ''}" class="responsive-img" style="max-width: 100%; height: auto; display: block; margin: 30px auto; border-radius: 6px;">`;
+        };
+
+        renderer.link = (arg1, title, text) => {
+            let href = arg1;
+            let titleAttr = title ? ` title="${title}"` : '';
+            let linkText = text;
+            if (typeof arg1 === 'object' && arg1 !== null) {
+                href = arg1.href;
+                titleAttr = arg1.title ? ` title="${arg1.title}"` : '';
+                linkText = arg1.text || '';
+            }
+            const isExternal = /^https?:\/\//i.test(href);
+            const targetAttr = isExternal ? ' target="_blank" rel="noopener noreferrer"' : '';
+            return `<a href="${href}"${titleAttr}${targetAttr}>${linkText}</a>`;
+        };
+
         marked.setOptions({
             breaks: true,
             gfm: true,
             headerIds: true,
-            mangle: false
+            mangle: false,
+            renderer: renderer
         });
 
+        // Resolve relative image paths if assetBaseUrl is provided
+        let processedMarkdown = markdown;
+        if (assetBaseUrl) {
+            processedMarkdown = processedMarkdown.replace(/!\[([^\]]*)\]\((?!(?:https?:|\/|data:|\.\.\/))([^)]+)\)/g, (match, alt, src) => {
+                const cleanSrc = src.startsWith('./') ? src.substring(2) : src;
+                return `![${alt}](${assetBaseUrl}${cleanSrc})`;
+            });
+        }
+
         if (!katex) {
-            return marked.parse(markdown);
+            return marked.parse(processedMarkdown);
         }
 
         const mathPlaceholders = [];
 
         // 1. Extract and pre-render display math ($$...$$) before marked parses backslashes
-        let processedMarkdown = markdown.replace(/\$\$([\s\S]+?)\$\$/g, (match, equation) => {
+        processedMarkdown = processedMarkdown.replace(/\$\$([\s\S]+?)\$\$/g, (match, equation) => {
             try {
                 const rendered = katex.renderToString(equation.trim(), {
                     displayMode: true,
@@ -87,8 +123,17 @@ export async function renderMarkdownWithMarked(markdown) {
 }
 
 // Simple fallback renderer if marked.js fails
-export function renderMarkdown(markdown) {
+export function renderMarkdown(markdown, options = {}) {
+    const { assetBaseUrl = '' } = options;
     let html = markdown;
+
+    // Resolve relative image paths if assetBaseUrl is provided
+    if (assetBaseUrl) {
+        html = html.replace(/!\[([^\]]*)\]\((?!(?:https?:|\/|data:|\.\.\/))([^)]+)\)/g, (match, alt, src) => {
+            const cleanSrc = src.startsWith('./') ? src.substring(2) : src;
+            return `![${alt}](${assetBaseUrl}${cleanSrc})`;
+        });
+    }
 
     // Headers
     html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
@@ -107,8 +152,15 @@ export function renderMarkdown(markdown) {
     // Inline code
     html = html.replace(/`([^`]+)`/gim, '<code>$1</code>');
 
+    // Images
+    html = html.replace(/!\[([^\]]*)\]\(([^)]+)\)/gim, '<img src="$2" alt="$1" class="responsive-img">');
+
     // Links
-    html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/gim, '<a href="$2">$1</a>');
+    html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/gim, (match, text, href) => {
+        const isExternal = /^https?:\/\//i.test(href);
+        const targetAttr = isExternal ? ' target="_blank" rel="noopener noreferrer"' : '';
+        return `<a href="${href}"${targetAttr}>${text}</a>`;
+    });
 
     // Lists
     html = html.replace(/^\* (.*$)/gim, '<li>$1</li>');

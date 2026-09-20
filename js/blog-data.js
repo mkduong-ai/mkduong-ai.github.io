@@ -3,12 +3,20 @@ import { renderMarkdownWithMarked } from './markdown-renderer.js';
 // Blog posts data configuration
 const blogPosts = [
     {
+        id: 'the-hype-treadmill-in-aiml',
+        title: 'The Crisis of Modern AI Research',
+        date: '2026-09-20',
+        excerpt: 'Modern AI research is facing a crisis: AI research is most prone to AI-written papers. Top-tier conferences now receive over 50,000 submissions where the main topic is about LLMs. We\'re trapped in an exploitation loop where foundational work is being drowned out by hype.',
+        tags: ['AI Research', 'Machine Learning', 'Optimization', 'Meta-Science', 'Peer Review'],
+        markdownFile: 'blog/2026/the-hype-treadmill-in-aiml/the-hype-treadmill-in-aiml.md'
+    },
+    {
         id: 'fairness-agnostic-optimization',
         title: 'Fairness-Agnostic Optimization: Debiasing Datasets with Genetic Algorithms',
         date: '2026-09-03',
         excerpt: 'How treating dataset debiasing as a combinatorial subset selection problem allows genetic algorithms to optimize any black-box fairness metric without gradients.',
         tags: ['Fair ML', 'Genetic Algorithms', 'Optimization', 'Responsible AI'],
-        markdownFile: 'blog/fairness-agnostic-optimization.md'
+        markdownFile: 'blog/2026/fairness-agnostic-optimization/fairness-agnostic-optimization.md'
     }
 ];
 
@@ -147,7 +155,13 @@ export async function loadBlogContent(markdownFile) {
         const prefix = isPagesDir ? '../' : '';
         const response = await fetch(prefix + markdownFile);
         const markdown = await response.text();
-        return await renderMarkdownWithMarked(markdown);
+
+        // Calculate folder containing the markdown file relative to the current page
+        const lastSlash = markdownFile.lastIndexOf('/');
+        const blogFolder = lastSlash !== -1 ? markdownFile.substring(0, lastSlash + 1) : '';
+        const assetBaseUrl = prefix + blogFolder;
+
+        return await renderMarkdownWithMarked(markdown, { assetBaseUrl });
     } catch (error) {
         console.error('Error loading blog content:', error);
         return '<p>Error loading blog post content.</p>';
