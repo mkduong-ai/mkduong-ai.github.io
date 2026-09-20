@@ -80,7 +80,6 @@ When generative models review the outputs of other generative models, journals a
 
 ## Key Takeaways
 
-1. **AI Research is in a Critical Phase**: Exploding submissions lead to overusing AI tools for both research and review, peer review becomes more noisy, and the AI field itself is prone to AI power users. Scientific literature loses credibility.
-1. **Exploration Over Exploitation**: Chasing trendy topics keeps us trapped in a local optimum. Long-term breakthroughs require exploring unconventional paradigms beyond dominant trends. Reviewers should accept unconventional submissions to promote new ideas.
-1. **Simplicity Over Complexity**: If a 10-line exact algorithm solves the problem, it is superior to a 100B-parameter wrapper. "Method is too simple" should never be an excuse for rejection.
-1. **Exact Guarantees Over Probabilistic Guesses**: Neural nets can approximate anything, but approximations have no guarantees. When exact closed-form math or traditional optimization works, use it.
+1. **AI Research is in a Critical Phase**: Exploding submissions lead to overusing AI tools for both research and review, peer review becomes more noisy, and the AI field itself is prone to AI power users. Scientific literature may be losing its credibility if this trend continues.
+2. **Exploration Over Exploitation**: Chasing trendy topics keeps us trapped in a local optimum. Long-term breakthroughs require exploring unconventional paradigms. Reviewers should accept *out-of-the-box* ideas to promote new directions. Currently, research is too focused on LLMs (agentic, multi-modal, prompting, MoE, quantization, etc.).
+3. **Simplicity Over Complexity & Overengineering**: If a 10-line exact algorithm solves the problem, it is superior to a 100B-parameter wrapper. "Method is too simple" should never be an excuse for rejection. Neural nets can approximate anything, but approximations have no guarantees. When exact closed-form math, or traditional optimization works, use it. Authors should question themselves whether their approach is an over-engineered solution to a simple problem.
