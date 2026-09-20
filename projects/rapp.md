@@ -1,10 +1,11 @@
 ## Project Summary
 
-**RAPP (Responsible Academic Performance Prediction)** is an interdisciplinary AI research and software engineering research project funded by the German Federal Ministry of Education and Research (**BMBF**, Project No. 16DHB4020, 2021–2024; [Official Website](https://rapp.hhu.de/en/)). 
+**RAPP (Responsible Academic Performance Prediction)** is an interdisciplinary AI research and software engineering research project funded by the German Federal Ministry of Education and Research (**BMBF**, Project No. 16DHB4020, 2021–2024; [Official Website](https://rapp.hhu.de/en/)).
 
 The project delivered an end-to-end, socially responsible, and privacy-compliant machine learning platform designed to predict academic performance and identify student dropout risks at early semesters. By detecting risk factors, higher education institutions can provide preventive counseling for students. In simple terms, RAPP helps universities predict dropouts before they happen.
 
 The engineering core of RAPP focused on solving the fundamental dilemmas of algorithmic fairness, ML opacity, and stakeholder trust in institutional AI systems:
+
 1. **Bias Mitigation & Fair ML**: Developing algorithms that prevent discriminatory disparities across demographic subgroups (e.g., gender, nationality, socio-economic background).
 2. **Explainable AI (xAI) & Rule Induction**: Delivering white-box models and counterfactual explanations of predictions that students and academic advisors can understand.
 3. **MLOps & Decision Support Software**: Building production-grade open-source libraries, benchmarking GUI tools, and web dashboards for end users in universities.
@@ -14,6 +15,7 @@ The engineering core of RAPP focused on solving the fundamental dilemmas of algo
 ## Software Developed
 
 ### 1. `fairdo` — Open-Source Python Library for Algorithmic Fairness
+
 * **PyPI / GitHub**: [`github.com/mkduong-ai/fairdo`](https://github.com/mkduong-ai/fairdo) (Author & Core Maintainer)
 * **Core Functionality**: A modular Python library specifically engineered to measure and mitigate algorithmic bias in tabular datasets.
 * **Non-Binary & Intersectional Fairness**: While standard literature focuses almost exclusively on binary protected attributes, `fairdo` introduces novel pre-processing optimization techniques capable of handling **multi-categorical, non-binary, and multiple protected attributes** simultaneously without degrading predictive accuracy.
@@ -21,6 +23,7 @@ The engineering core of RAPP focused on solving the fundamental dilemmas of algo
 * **Standardized Fairness Metrics**: Built-in estimators for **Equalised Odds**, **Demographic Parity (Statistical Parity)**, **Disparate Impact**, and **Individual Fairness**.
 
 ### 2. RAPP-Tool — MLOps GUI & Multi-Objective Model Benchmarking Platform
+
 * **Repository**: [github.com/hhu-rapp/rapp-tool](https://github.com/hhu-rapp/rapp-tool) (MIT License)
 * **Dataset Generation & SQL Integration**: Provides an interactive desktop interface allowing researchers and data engineers to construct custom training datasets directly via SQL queries.
 * **Automated Training & Evaluation Pipeline**: Automated training, hyperparameter tuning, and cross-validation across a diverse suite of machine learning models:
@@ -33,6 +36,7 @@ The engineering core of RAPP focused on solving the fundamental dilemmas of algo
 * **Model Serialization & Export**: Standardized model artifact export for downstream deployment into production services.
 
 ### 3. RAPP WebApp — Decision Support Dashboard for Higher Education
+
 * **Repository**: [github.com/hhu-rapp/rapp-webapp](https://github.com/hhu-rapp/rapp-webapp) (MIT License)
 * **Target Audience**: Designed specifically for non-technical administrative users, including university study advisors (*Zentrale Studienberatung*), examination boards, and faculty deans.
 * **Role-Based Access Control (RBAC)**: Secure authentication and granular permission management ensuring advisors only view authorized student cohorts and degree programs.
@@ -44,52 +48,21 @@ The engineering core of RAPP focused on solving the fundamental dilemmas of algo
 
 ## ML-driven Decision Support System Pipeline
 
-```
-┌─────────────────────────────────────────────────────────┐
-│          Relational Student Database & Surveys          │
-│       (Pseudonymized Grades, ECTS, Sociodemographics)   │
-└────────────────────────────┬────────────────────────────┘
-                             │
-                             ▼
-┌─────────────────────────────────────────────────────────┐
-│                 fairdo Pre-processing                   │
-│   • Multi-Attribute Bias Measurement (Equalised Odds)   │
-│   • Synthetic Data Generation & Sample Optimization     │
-└────────────────────────────┬────────────────────────────┘
-                             │
-                             ▼
-┌─────────────────────────────────────────────────────────┐
-│                 RAPP-Tool MLOps Engine                  │
-│   • Model Training (Decision Trees, SVM, MLP, ...)      │
-│   • Multi-Objective Pareto-Front Optimization           │
-└────────────────────────────┬────────────────────────────┘
-                             │
-                             ▼
-┌─────────────────────────────────────────────────────────┐
-│           Explainable AI (xAI) & Rule Induction         │
-│   • White-box Decision Tree Branch Traversal            │
-│   • Minimal Counterfactual Explanation Generation       │
-└────────────────────────────┬────────────────────────────┘
-                             │
-                             ▼
-┌─────────────────────────────────────────────────────────┐
-│               RAPP WebApp Decision Support              │
-│   • Role-Based Access Control (RBAC) & GDPR Security    │
-│   • Traffic-Light Risk Scores + Human-in-the-Loop       │
-└─────────────────────────────────────────────────────────┘
-```
+![ML-driven Decision Support System Pipeline](rapp-pipeline.svg)
 
 <!-- ### Worldview Formulation: WYSIWYG & Equalised Odds
 * Conducted theoretical and empirical investigations into algorithmic fairness worldviews (*"We're All Equal"* vs. *"What You See Is What You Get"*).
 * Proved that in university performance prediction, prior examination records are already established administrative facts. Under this formulation, adopting the **WYSIWYG** worldview and optimizing for **Equalised Odds** mathematically prevents the inadvertent introduction of reverse discrimination. -->
 
 ### White-Box Interpretable Models & Counterfactuals
+
 * Rather than relying on opaque deep neural networks paired with unstable post-hoc approximations (such as LIME or SHAP, which can obscure critical biases), RAPP prioritized **inherently interpretable Decision Trees**.
 * **Rule Induction**: Extracted transparent if-then decision paths from tree branches, showing users the exact criteria leading to a risk score.
 * **Counterfactual Explanations**: Calculated minimal actionable feature adjustments (e.g., *"Earning 12 additional ECTS in Semester 2 shifts the prediction from at-risk to on-track"*).
 * Empirical benchmark results demonstrated that Decision Trees consistently matched or outperformed complex black-box classifiers while remaining on the Pareto frontier for both Balanced Accuracy and fairness metrics.
 
 ### Key Target Variables Modeled
+
 1. **Student Dropout Risk (*Studienabbruch*)**: Binary classification predicting non-completion based on 1st/2nd semester performance.
 2. **On-Time Graduation (*Regelstudienzeit*)**: Classification of degree completion within standard curriculum duration.
 3. **Credit Milestone (>100 ECTS by Semester 4)**: Intermediate progression milestone prediction.
@@ -108,6 +81,7 @@ The engineering core of RAPP focused on solving the fundamental dilemmas of algo
 ## Interdisciplinary Collaboration & Stakeholder Leadership
 
 The RAPP project was structured across three collaborative work packages:
+
 * **AP1 (Computer Science — Core Development & Modeling)**: Led model training, fairness algorithms, xAI rule induction, `fairdo`, RAPP-Tool, and RAPP WebApp.
 * **AP2 (Sociology — Ethical Requirements & Data Gathering)**: Conducted 35+ qualitative expert interviews with university stakeholders and executed 3 survey waves of students.
 * **AP3 (Communication Science — Fairness Perception & Experiments)**: Developed a multidimensional scale for perceived algorithmic fairness and conducted randomized field experiments.

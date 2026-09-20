@@ -1,0 +1,192 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 948" width="100%" height="100%" style="background:#ffffff; font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
+  <defs>
+    <!-- Card Drop Shadow -->
+    <filter id="cardShadow" x="-4%" y="-3%" width="108%" height="110%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.06"/>
+    </filter>
+    
+    <!-- Connector Gradient -->
+    <linearGradient id="connGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#94a3b8" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#64748b" stop-opacity="1"/>
+    </linearGradient>
+
+    <!-- Marker Arrow -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <!-- ==================== STAGE 1: DATA INGESTION ==================== -->
+  <g id="stage-1" transform="translate(20, 12)">
+    <!-- Card Frame -->
+    <rect x="0" y="0" width="620" height="142" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" filter="url(#cardShadow)"/>
+    <!-- Left Accent Bar -->
+    <path d="M 0 10 Q 0 0 10 0 L 10 0 L 10 142 L 10 142 Q 0 142 0 132 Z" fill="#2563eb" />
+    
+    <!-- Header Area -->
+    <rect x="22" y="14" width="70" height="23" rx="4" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+    <text x="57" y="30" text-anchor="middle" font-size="11" font-weight="700" fill="#1d4ed8">STAGE 01</text>
+    
+    <text x="102" y="32" font-size="17.5" font-weight="700" fill="#0f172a">Relational Student Database &amp; Surveys</text>
+    
+    <rect x="496" y="14" width="102" height="23" rx="11" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="547" y="30" text-anchor="middle" font-size="11.5" font-weight="600" fill="#475569">SQL &amp; Surveys</text>
+    
+    <line x1="22" y1="46" x2="600" y2="46" stroke="#f1f5f9" stroke-width="1.2"/>
+
+    <!-- Bullets -->
+    <circle cx="34" cy="67" r="4" fill="#2563eb" />
+    <text x="48" y="72" font-size="15" font-weight="600" fill="#1e293b">Pseudonymized Academic Records <tspan font-size="14" font-weight="400" fill="#64748b">(Grades, GPA, Exam Attempts, etc.)</tspan></text>
+
+    <circle cx="34" cy="94" r="4" fill="#2563eb" />
+    <text x="48" y="99" font-size="15" font-weight="600" fill="#1e293b">Credit Progression Milestones <tspan font-size="14" font-weight="400" fill="#64748b">(ECTS Credit Velocity, etc.)</tspan></text>
+
+    <circle cx="34" cy="121" r="4" fill="#2563eb" />
+    <text x="48" y="126" font-size="15" font-weight="600" fill="#1e293b">Sociodemographic Attributes <tspan font-size="14" font-weight="400" fill="#64748b">(Gender, First-Gen Academic, Background, etc.)</tspan></text>
+  </g>
+
+  <!-- Connector 1 -> 2 -->
+  <g transform="translate(330, 154)">
+    <line x1="0" y1="0" x2="0" y2="34" stroke="url(#connGrad)" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <rect x="-72" y="6" width="144" height="22" rx="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" filter="url(#cardShadow)"/>
+    <text x="0" y="21" text-anchor="middle" font-size="11.5" font-weight="600" fill="#475569">Raw Student Data</text>
+  </g>
+
+  <!-- ==================== STAGE 2: fairdo PRE-PROCESSING ==================== -->
+  <g id="stage-2" transform="translate(20, 188)">
+    <!-- Card Frame -->
+    <rect x="0" y="0" width="620" height="164" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" filter="url(#cardShadow)"/>
+    <!-- Left Accent Bar -->
+    <path d="M 0 10 Q 0 0 10 0 L 10 0 L 10 164 L 10 164 Q 0 164 0 154 Z" fill="#7c3aed" />
+
+    <!-- Header Area -->
+    <rect x="22" y="14" width="70" height="23" rx="4" fill="#f5f3ff" stroke="#ddd6fe" stroke-width="1"/>
+    <text x="57" y="30" text-anchor="middle" font-size="11" font-weight="700" fill="#6d28d9">STAGE 02</text>
+    
+    <text x="102" y="32" font-size="17.5" font-weight="700" fill="#0f172a">fairdo Bias Mitigation</text>
+
+    <rect x="478" y="14" width="120" height="23" rx="11" fill="#f5f3ff" stroke="#ddd6fe" stroke-width="1"/>
+    <text x="538" y="30" text-anchor="middle" font-size="11.5" font-weight="600" fill="#6d28d9">Pre-processing Tool</text>
+
+    <line x1="22" y1="46" x2="600" y2="46" stroke="#f1f5f9" stroke-width="1.2"/>
+
+    <!-- Bullets -->
+    <circle cx="34" cy="67" r="4" fill="#7c3aed" />
+    <text x="48" y="72" font-size="15" font-weight="700" fill="#1e293b">Multi-Attribute Bias Measurement</text>
+    <text x="64" y="90" font-size="13.5" font-weight="500" fill="#64748b">• Non-binary &amp; intersectional demographic groups</text>
+    <text x="64" y="108" font-size="13.5" font-weight="500" fill="#64748b">• Standard metrics: <tspan font-weight="600" fill="#475569">Equalised Odds</tspan> &amp; <tspan font-weight="600" fill="#475569">Statistical Parity</tspan></text>
+
+    <circle cx="34" cy="128" r="4" fill="#7c3aed" />
+    <text x="48" y="133" font-size="15" font-weight="700" fill="#1e293b">Fair Data Optimization</text>
+    <text x="64" y="151" font-size="13.5" font-weight="500" fill="#64748b">• Sample reweighting &amp; synthetic data generation and removal before training</text>
+  </g>
+
+  <!-- Connector 2 -> 3 -->
+  <g transform="translate(330, 352)">
+    <line x1="0" y1="0" x2="0" y2="34" stroke="url(#connGrad)" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <rect x="-76" y="6" width="152" height="22" rx="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" filter="url(#cardShadow)"/>
+    <text x="0" y="21" text-anchor="middle" font-size="11.5" font-weight="600" fill="#475569">Debiased Data Sets</text>
+  </g>
+
+  <!-- ==================== STAGE 3: RAPP-Tool MLOps ==================== -->
+  <g id="stage-3" transform="translate(20, 386)">
+    <!-- Card Frame -->
+    <rect x="0" y="0" width="620" height="152" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" filter="url(#cardShadow)"/>
+    <!-- Left Accent Bar -->
+    <path d="M 0 10 Q 0 0 10 0 L 10 0 L 10 152 L 10 152 Q 0 152 0 142 Z" fill="#0d9488" />
+
+    <!-- Header Area -->
+    <rect x="22" y="14" width="70" height="23" rx="4" fill="#f0fdfa" stroke="#99f6e4" stroke-width="1"/>
+    <text x="57" y="30" text-anchor="middle" font-size="11" font-weight="700" fill="#0f766e">STAGE 03</text>
+    
+    <text x="102" y="32" font-size="17.5" font-weight="700" fill="#0f172a">RAPP-Tool MLOps GUI</text>
+
+    <rect x="468" y="14" width="130" height="23" rx="11" fill="#f0fdfa" stroke="#99f6e4" stroke-width="1"/>
+    <text x="533" y="30" text-anchor="middle" font-size="11.5" font-weight="600" fill="#0f766e">Model Benchmarking</text>
+
+    <line x1="22" y1="46" x2="600" y2="46" stroke="#f1f5f9" stroke-width="1.2"/>
+
+    <!-- Bullets -->
+    <circle cx="34" cy="67" r="4" fill="#0d9488" />
+    <text x="48" y="72" font-size="15" font-weight="700" fill="#1e293b">Multi-Model Training Suite</text>
+    <text x="64" y="90" font-size="13.5" font-weight="500" fill="#64748b">• <tspan font-weight="600" fill="#334155">Decision Trees</tspan>, Support Vector Machines (SVM), Random Forests, MLP</text>
+
+    <circle cx="34" cy="116" r="4" fill="#0d9488" />
+    <text x="48" y="121" font-size="15" font-weight="700" fill="#1e293b">Multi-Objective Pareto-Front Optimization</text>
+    <text x="64" y="139" font-size="13.5" font-weight="500" fill="#64748b">• Balances <tspan font-weight="600" fill="#334155">Predictive Utility (F1 / AUC)</tspan> vs. <tspan font-weight="600" fill="#334155">Group Fairness</tspan></text>
+  </g>
+
+  <!-- Connector 3 -> 4 -->
+  <g transform="translate(330, 538)">
+    <line x1="0" y1="0" x2="0" y2="34" stroke="url(#connGrad)" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <rect x="-82" y="6" width="164" height="22" rx="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" filter="url(#cardShadow)"/>
+    <text x="0" y="21" text-anchor="middle" font-size="11.5" font-weight="600" fill="#475569">Pareto-Optimal Models</text>
+  </g>
+
+  <!-- ==================== STAGE 4: EXPLAINABLE AI ==================== -->
+  <g id="stage-4" transform="translate(20, 572)">
+    <!-- Card Frame -->
+    <rect x="0" y="0" width="620" height="152" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" filter="url(#cardShadow)"/>
+    <!-- Left Accent Bar -->
+    <path d="M 0 10 Q 0 0 10 0 L 10 0 L 10 152 L 10 152 Q 0 152 0 142 Z" fill="#ea580c" />
+
+    <!-- Header Area -->
+    <rect x="22" y="14" width="70" height="23" rx="4" fill="#fff7ed" stroke="#fed7aa" stroke-width="1"/>
+    <text x="57" y="30" text-anchor="middle" font-size="11" font-weight="700" fill="#c2410c">STAGE 04</text>
+    
+    <text x="102" y="32" font-size="17.5" font-weight="700" fill="#0f172a">Explainable AI (xAI) &amp; Rule Induction</text>
+
+    <rect x="494" y="14" width="104" height="23" rx="11" fill="#fff7ed" stroke="#fed7aa" stroke-width="1"/>
+    <text x="546" y="30" text-anchor="middle" font-size="11.5" font-weight="600" fill="#c2410c">White-Box xAI</text>
+
+    <line x1="22" y1="46" x2="600" y2="46" stroke="#f1f5f9" stroke-width="1.2"/>
+
+    <!-- Bullets -->
+    <circle cx="34" cy="67" r="4" fill="#ea580c" />
+    <text x="48" y="72" font-size="15" font-weight="700" fill="#1e293b">White-Box Decision Tree Branch Traversal</text>
+    <text x="64" y="90" font-size="13.5" font-weight="500" fill="#64748b">• Direct extraction of human-readable <tspan font-weight="600" fill="#334155">IF-THEN decision rules</tspan></text>
+
+    <circle cx="34" cy="116" r="4" fill="#ea580c" />
+    <text x="48" y="121" font-size="15" font-weight="700" fill="#1e293b">Counterfactual Explanation</text>
+    <text x="64" y="139" font-size="13.5" font-weight="500" fill="#64748b">• Computes specific adjustments to flip predictions from at-risk to on-track</text>
+  </g>
+
+  <!-- Connector 4 -> 5 -->
+  <g transform="translate(330, 724)">
+    <line x1="0" y1="0" x2="0" y2="34" stroke="url(#connGrad)" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <rect x="-80" y="6" width="160" height="22" rx="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" filter="url(#cardShadow)"/>
+    <text x="0" y="21" text-anchor="middle" font-size="11.5" font-weight="600" fill="#475569">Rules &amp; Recourse</text>
+  </g>
+
+  <!-- ==================== STAGE 5: RAPP WEBAPP ==================== -->
+  <g id="stage-5" transform="translate(20, 758)">
+    <!-- Card Frame -->
+    <rect x="0" y="0" width="620" height="178" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" filter="url(#cardShadow)"/>
+    <!-- Left Accent Bar -->
+    <path d="M 0 10 Q 0 0 10 0 L 10 0 L 10 178 L 10 178 Q 0 178 0 168 Z" fill="#059669" />
+
+    <!-- Header Area -->
+    <rect x="22" y="14" width="70" height="23" rx="4" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1"/>
+    <text x="57" y="30" text-anchor="middle" font-size="11" font-weight="700" fill="#047857">STAGE 05</text>
+    
+    <text x="102" y="32" font-size="17.5" font-weight="700" fill="#0f172a">RAPP WebApp</text>
+
+    <rect x="474" y="14" width="124" height="23" rx="11" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1"/>
+    <text x="536" y="30" text-anchor="middle" font-size="11.5" font-weight="600" fill="#047857">Decision Support</text>
+
+    <line x1="22" y1="46" x2="600" y2="46" stroke="#f1f5f9" stroke-width="1.2"/>
+
+    <!-- Bullets -->
+    <circle cx="34" cy="67" r="4" fill="#059669" />
+    <text x="48" y="72" font-size="15" font-weight="700" fill="#1e293b">Role-Based Access Control (RBAC) &amp; GDPR Compliance</text>
+    <text x="64" y="90" font-size="13.5" font-weight="500" fill="#64748b">• Dedicated tiers for study advisors (ZSB), examination boards, &amp; deans</text>
+
+    <circle cx="34" cy="113" r="4" fill="#059669" />
+    <text x="48" y="118" font-size="15" font-weight="700" fill="#1e293b">Traffic-Light Early Warning System</text>
+    <text x="64" y="136" font-size="13.5" font-weight="500" fill="#64748b">• Green / Yellow / Red alerts for dropout risk &amp; on-time graduation</text>
+
+    <circle cx="34" cy="158" r="4" fill="#059669" />
+    <text x="48" y="163" font-size="15" font-weight="700" fill="#1e293b">Human-in-the-Loop Governance <tspan font-size="14" font-weight="400" fill="#64748b">(Advisors retain full autonomy)</tspan></text>
+  </g>
+</svg>

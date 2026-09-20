@@ -144,7 +144,11 @@ export async function loadProjectContent(markdownFile) {
         const prefix = isPagesDir ? '../' : '';
         const response = await fetch(prefix + markdownFile);
         const markdown = await response.text();
-        return await renderMarkdownWithMarked(markdown);
+        const lastSlash = markdownFile.lastIndexOf('/');
+        const projectFolder = lastSlash !== -1 ? markdownFile.substring(0, lastSlash + 1) : '';
+        const assetBaseUrl = prefix + projectFolder;
+
+        return await renderMarkdownWithMarked(markdown, { assetBaseUrl });
     } catch (error) {
         console.error('Error loading project content:', error);
         return '<p>Error loading project content.</p>';
