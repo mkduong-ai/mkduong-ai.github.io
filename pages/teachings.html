@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teachings & Supervised Theses - Dr. Duong</title>
+    <meta name="description"
+        content="Academic teaching portfolio of Dr. Manh Khoi Duong at Heinrich Heine University Düsseldorf, including university courses and supervised Master and Bachelor theses.">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/teachings.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="white">
+        <div class="nav-wrapper">
+            <a href="../index.html" class="brand-logo blue-text text-darken-2">Dr. Duong</a>
+            <a href="#" data-target="mobile-nav" class="sidenav-trigger blue-text text-darken-2">
+                <i class="material-icons">menu</i>
+            </a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="../index.html#about" class="blue-text text-darken-2">About</a></li>
+                <li><a href="../index.html#experience" class="blue-text text-darken-2">Experience</a></li>
+                <li><a href="projects.html" class="blue-text text-darken-2">Projects</a></li>
+                <li><a href="teachings.html" class="blue-text text-darken-2 font-weight-500">Teachings</a></li>
+                <li><a href="blog.html" class="blue-text text-darken-2">Blog</a></li>
+                <li><a href="../index.html#contact" class="blue-text text-darken-2">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-nav">
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#experience">Experience</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="teachings.html">Teachings</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+
+    <!-- Hero Header -->
+    <section class="teachings-hero center-align">
+        <div class="container">
+            <h1>Teachings & Supervision</h1>
+            <p class="lead">
+                Lectures, seminars, and academic research mentoring at Heinrich Heine University Düsseldorf, focusing on
+                Responsible AI, Algorithmic Fairness, Natural Language Processing, and Data Systems.
+            </p>
+            <div class="teachings-stats">
+                <div class="stat-pill">
+                    <i class="material-icons">menu_book</i>
+                    <span><strong>11</strong> Courses (17 Semesters)</span>
+                </div>
+                <div class="stat-pill">
+                    <i class="material-icons">school</i>
+                    <span><strong>23+</strong> Supervised Theses</span>
+                </div>
+                <div class="stat-pill">
+                    <i class="material-icons">auto_stories</i>
+                    <span>B.Sc., M.Sc. & Project Theses</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="section grey lighten-4" style="padding-top: 30px; padding-bottom: 80px;">
+        <div class="container">
+
+
+            <!-- Filters & Search Toolbar -->
+            <div class="filter-wrapper">
+                <div class="filter-pills">
+                    <button class="filter-btn view-tab-btn active" data-tab="all">All Content</button>
+                    <button class="filter-btn view-tab-btn" data-tab="courses">Courses Only</button>
+                    <button class="filter-btn view-tab-btn" data-tab="theses">Theses & Projects</button>
+                </div>
+                <div class="filter-pills">
+                    <button class="filter-btn degree-filter-btn active" data-degree="all">All Levels</button>
+                    <button class="filter-btn degree-filter-btn" data-degree="Master">Master</button>
+                    <button class="filter-btn degree-filter-btn" data-degree="Bachelor">Bachelor</button>
+                    <button class="filter-btn degree-filter-btn" data-degree="Project">Projects</button>
+                </div>
+                <div class="search-box">
+                    <i class="material-icons">search</i>
+                    <input type="text" id="teachings-search" placeholder="Search courses, topics, theses...">
+                </div>
+            </div>
+
+            <!-- Section 1: University Courses -->
+            <div id="courses-section-wrapper" style="margin-bottom: 50px;">
+                <div class="section-title-wrap">
+                    <h3 class="section-title">
+                        <i class="material-icons">cast_for_education</i>
+                        <span>University Courses Taught</span>
+                    </h3>
+                    <span class="section-count-badge" id="courses-count">Loading...</span>
+                </div>
+                <div class="row" id="courses-container">
+                    <!-- Populated dynamically via JS -->
+                </div>
+            </div>
+
+            <!-- Section 2: Supervised Theses -->
+            <div id="theses-section-wrapper">
+                <div class="section-title-wrap">
+                    <h3 class="section-title">
+                        <i class="material-icons">groups</i>
+                        <span>Supervised Theses & Research Projects</span>
+                    </h3>
+                    <span class="section-count-badge" id="theses-count">Loading...</span>
+                </div>
+                <div id="theses-container">
+                    <!-- Populated dynamically via JS -->
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="teachings-cta">
+                <h4>Interested in Research Collaboration?</h4>
+                <p>Feel free to reach out with topic proposals regarding Responsible AI, Algorithmic
+                    Fairness, NLP, or Quantitative Finance.</p>
+                <a href="../index.html#contact" class="waves-effect waves-light btn-large blue darken-2"
+                    style="border-radius: 25px; text-transform: none; font-weight: 500;">
+                    <i class="material-icons left">send</i>Contact Me
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-section"></div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="module" src="../js/teachings-listing.js"></script>
+</body>
+
+</html>
