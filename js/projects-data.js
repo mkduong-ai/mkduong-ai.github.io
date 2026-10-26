@@ -3,12 +3,21 @@ import { renderMarkdownWithMarked } from './markdown-renderer.js';
 // Projects data configuration
 const projects = [
     {
+        id: 'dive',
+        title: 'DIVE x HHU: AI-Driven Job Matching Platform',
+        description: 'A non-discriminatory, skills-based job matching platform designed in collaboration with DIVE connected GmbH and HHU Düsseldorf for automated matching of open job positions to suitable CVs using semantic similarity search and fair ranking algorithms.',
+        markdownFile: 'projects/dive.md',
+        image: 'img/dive-banner.svg',
+        tags: ['Natural Language Processing', 'Semantic Matching', 'Responsible AI', 'Fair Ranking', 'Explainable AI (xAI)'],
+        technologies: ['Python', 'NLP / Transformers', 'Fair Ranking', 'Constrained Optimization', 'FastAPI', 'Docker', 'EU AI Act']
+    },
+    {
         id: 'rapp',
         title: 'RAPP: Responsible Academic Performance Prediction',
         description: 'A multi-year BMBF-funded Responsible AI system delivering Fair ML bias mitigation, Explainable AI (xAI) rule induction, and human-in-the-loop decision support tools for academic performance, including dropout prediction.',
         markdownFile: 'projects/rapp.md',
         image: 'img/rapp-banner.svg',
-        tags: ['Responsible AI', 'Fair ML', 'Explainable AI (xAI)', 'MLOps', 'Decision Support'],
+        tags: ['Responsible AI', 'Fair ML', 'Explainable AI (xAI)', 'MLOps', 'CI/CD', 'Decision Support'],
         technologies: ['Python', 'PyTorch', 'Scikit-learn', 'SQL', 'Pareto Optimization', 'Docker', 'GDPR Compliance']
     }
 ];

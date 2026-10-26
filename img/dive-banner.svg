@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b132b" />
+      <stop offset="50%" stop-color="#1c2541" />
+      <stop offset="100%" stop-color="#0b1d3a" />
+    </linearGradient>
+    <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06d6a0" />
+      <stop offset="100%" stop-color="#118ab2" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38ef7d" />
+      <stop offset="100%" stop-color="#11998e" />
+    </linearGradient>
+    <linearGradient id="orangeGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f77f00" />
+      <stop offset="100%" stop-color="#fcbf49" />
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+    </pattern>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGrad)" />
+  <rect width="1200" height="630" fill="url(#grid)" />
+
+  <!-- Background Graphic: Decorative Network / Matching Graph -->
+  <g opacity="0.32">
+    <circle cx="1020" cy="220" r="170" fill="none" stroke="url(#tealGrad)" stroke-width="1.5" stroke-dasharray="6,6" />
+    <circle cx="1020" cy="220" r="110" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1" />
+    
+    <!-- Candidate to Job Vector Connections -->
+    <path d="M 840 360 L 950 290 L 1090 290" fill="none" stroke="#06d6a0" stroke-width="2" />
+    <path d="M 950 290 L 1030 210 L 1130 210" fill="none" stroke="#118ab2" stroke-width="2" />
+    <path d="M 950 290 L 1030 380 L 1130 380" fill="none" stroke="#38ef7d" stroke-width="2" />
+    <path d="M 840 360 L 940 440 L 1060 440" fill="none" stroke="#fcbf49" stroke-width="2" />
+    
+    <!-- Nodes -->
+    <circle cx="840" cy="360" r="8" fill="#06d6a0" />
+    <circle cx="950" cy="290" r="7" fill="#118ab2" />
+    <circle cx="1030" cy="210" r="6" fill="#ffffff" />
+    <circle cx="1030" cy="380" r="6" fill="#38ef7d" />
+    <circle cx="940" cy="440" r="7" fill="#f77f00" />
+    <circle cx="1060" cy="440" r="6" fill="#fcbf49" />
+    <circle cx="1090" cy="290" r="5" fill="#06d6a0" />
+    <circle cx="1130" cy="210" r="5" fill="#118ab2" />
+    <circle cx="1130" cy="380" r="5" fill="#06d6a0" />
+
+    <!-- Fair Ranking Pareto Curve -->
+    <path d="M 800 520 Q 920 500 1010 400 T 1150 150" fill="none" stroke="url(#tealGrad)" stroke-width="3.5" filter="url(#glow)" />
+  </g>
+
+  <!-- Left Content Area -->
+  <g transform="translate(100, 140)">
+    <!-- Badges -->
+    <g transform="translate(0, 0)">
+      <rect x="0" y="0" width="195" height="34" rx="17" fill="rgba(6, 214, 160, 0.15)" stroke="#06d6a0" stroke-width="1.2" />
+      <text x="97.5" y="22" fill="#06d6a0" font-family="'Roboto', sans-serif" font-size="13" font-weight="600" text-anchor="middle" letter-spacing="1">FUNDRAISING INITIATIVE</text>
+
+      <rect x="210" y="0" width="155" height="34" rx="17" fill="rgba(247, 127, 0, 0.15)" stroke="#f77f00" stroke-width="1.2" />
+      <text x="287.5" y="22" fill="#f77f00" font-family="'Roboto', sans-serif" font-size="13" font-weight="600" text-anchor="middle" letter-spacing="1">FAIR RECRUITING</text>
+
+      <rect x="380" y="0" width="130" height="34" rx="17" fill="rgba(255, 255, 255, 0.1)" stroke="rgba(255, 255, 255, 0.3)" stroke-width="1" />
+      <text x="445" y="22" fill="#ffffff" font-family="'Roboto', sans-serif" font-size="14" font-weight="500" text-anchor="middle">2024 – PRESENT</text>
+    </g>
+
+    <!-- Main Title -->
+    <text x="0" y="105" fill="#ffffff" font-family="'Roboto', sans-serif" font-size="50" font-weight="800" letter-spacing="1">AI-Driven Job Matching Platform</text>
+    <text x="0" y="160" fill="url(#tealGrad)" font-family="'Roboto', sans-serif" font-size="28" font-weight="600">DIVE connected GmbH × HHU Düsseldorf</text>
+    
+    <!-- Subtitle / Mission -->
+    <text x="0" y="220" fill="#e0e6ed" font-family="'Roboto', sans-serif" font-size="20" font-weight="400">
+      <tspan x="0" dy="0">Skills-First Matching • Semantic NLP Embeddings</tspan>
+      <tspan x="0" dy="30">Algorithmic Fair Ranking • Explainable AI (xAI)</tspan>
+      <tspan x="0" dy="30">EU AI Act Compliant • Anonymized Profiles</tspan>
+    </text>
+
+    <!-- Tech Stack Pill Highlights -->
+    <g transform="translate(0, 300)">
+      <rect x="0" y="0" width="105" height="32" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <text x="52.5" y="21" fill="#94a3b8" font-family="'Roboto', sans-serif" font-size="14" font-weight="500" text-anchor="middle">Python</text>
+
+      <rect x="115" y="0" width="150" height="32" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <text x="190" y="21" fill="#94a3b8" font-family="'Roboto', sans-serif" font-size="14" font-weight="500" text-anchor="middle">Semantic NLP</text>
+
+      <rect x="275" y="0" width="140" height="32" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <text x="345" y="21" fill="#94a3b8" font-family="'Roboto', sans-serif" font-size="14" font-weight="500" text-anchor="middle">Fair Ranking</text>
+
+      <rect x="425" y="0" width="145" height="32" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <text x="497.5" y="21" fill="#94a3b8" font-family="'Roboto', sans-serif" font-size="14" font-weight="500" text-anchor="middle">XAI / Recourse</text>
+
+      <rect x="580" y="0" width="115" height="32" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <text x="637.5" y="21" fill="#94a3b8" font-family="'Roboto', sans-serif" font-size="14" font-weight="500" text-anchor="middle">FastAPI</text>
+    </g>
+  </g>
+</svg>

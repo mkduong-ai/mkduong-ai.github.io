@@ -1,0 +1,190 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 948" width="100%" height="100%" style="background:#ffffff; font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
+  <defs>
+    <!-- Card Drop Shadow -->
+    <filter id="cardShadow" x="-4%" y="-3%" width="108%" height="110%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.06"/>
+    </filter>
+    
+    <!-- Connector Gradient -->
+    <linearGradient id="connGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#94a3b8" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#64748b" stop-opacity="1"/>
+    </linearGradient>
+
+    <!-- Marker Arrow -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <!-- ==================== STAGE 1: INGESTION & ANONYMIZATION ==================== -->
+  <g id="stage-1" transform="translate(20, 12)">
+    <!-- Card Frame -->
+    <rect x="0" y="0" width="620" height="142" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" filter="url(#cardShadow)"/>
+    <!-- Left Accent Bar -->
+    <path d="M 0 10 Q 0 0 10 0 L 10 0 L 10 142 L 10 142 Q 0 142 0 132 Z" fill="#0284c7" />
+
+    <!-- Header Area -->
+    <rect x="22" y="14" width="70" height="23" rx="4" fill="#e0f2fe" stroke="#bae6fd" stroke-width="1"/>
+    <text x="57" y="30" text-anchor="middle" font-size="11" font-weight="700" fill="#0369a1">STAGE 01</text>
+    
+    <text x="102" y="32" font-size="17.5" font-weight="700" fill="#0f172a">Ingestion &amp; Demography Anonymization</text>
+
+    <rect x="470" y="14" width="128" height="23" rx="11" fill="#e0f2fe" stroke="#bae6fd" stroke-width="1"/>
+    <text x="534" y="30" text-anchor="middle" font-size="11.5" font-weight="600" fill="#0369a1">Data Preparation</text>
+
+    <line x1="22" y1="46" x2="600" y2="46" stroke="#f1f5f9" stroke-width="1.2"/>
+
+    <!-- Bullets -->
+    <circle cx="34" cy="67" r="4" fill="#0284c7" />
+    <text x="48" y="72" font-size="15" font-weight="700" fill="#1e293b">Candidate Profiles &amp; Unstructured Vacancies</text>
+    <text x="64" y="90" font-size="13.5" font-weight="500" fill="#64748b">• Ingestion of free-text statements, CV qualifications &amp; job specs</text>
+
+    <circle cx="34" cy="115" r="4" fill="#0284c7" />
+    <text x="48" y="120" font-size="15" font-weight="700" fill="#1e293b">Complete Demographic Strip (Anti-Bias Design)</text>
+    <text x="64" y="138" font-size="13.5" font-weight="500" fill="#64748b">• Removal of gender, ethnicity, age, photo &amp; proxy identity markers</text>
+  </g>
+
+  <!-- Connector 1 -> 2 -->
+  <g transform="translate(330, 154)">
+    <line x1="0" y1="0" x2="0" y2="34" stroke="url(#connGrad)" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <rect x="-85" y="6" width="170" height="22" rx="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" filter="url(#cardShadow)"/>
+    <text x="0" y="21" text-anchor="middle" font-size="11.5" font-weight="600" fill="#475569">Anonymized Text</text>
+  </g>
+
+  <!-- ==================== STAGE 2: SEMANTIC NLP & EXTRACTION ==================== -->
+  <g id="stage-2" transform="translate(20, 188)">
+    <!-- Card Frame -->
+    <rect x="0" y="0" width="620" height="152" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" filter="url(#cardShadow)"/>
+    <!-- Left Accent Bar -->
+    <path d="M 0 10 Q 0 0 10 0 L 10 0 L 10 152 L 10 152 Q 0 152 0 142 Z" fill="#7c3aed" />
+
+    <!-- Header Area -->
+    <rect x="22" y="14" width="70" height="23" rx="4" fill="#f5f3ff" stroke="#ddd6fe" stroke-width="1"/>
+    <text x="57" y="30" text-anchor="middle" font-size="11" font-weight="700" fill="#6d28d9">STAGE 02</text>
+    
+    <text x="102" y="32" font-size="17.5" font-weight="700" fill="#0f172a">Semantic NLP &amp; Competency Extraction</text>
+
+    <rect x="475" y="14" width="123" height="23" rx="11" fill="#f5f3ff" stroke="#ddd6fe" stroke-width="1"/>
+    <text x="536" y="30" text-anchor="middle" font-size="11.5" font-weight="600" fill="#6d28d9">Skills Modeling</text>
+
+    <line x1="22" y1="46" x2="600" y2="46" stroke="#f1f5f9" stroke-width="1.2"/>
+
+    <!-- Bullets -->
+    <circle cx="34" cy="67" r="4" fill="#7c3aed" />
+    <text x="48" y="72" font-size="15" font-weight="700" fill="#1e293b">Beyond Keyword Matching (Semantic Embeddings)</text>
+    <text x="64" y="90" font-size="13.5" font-weight="500" fill="#64748b">• Dense vector representations mapping candidate skills to job requirements</text>
+
+    <circle cx="34" cy="115" r="4" fill="#7c3aed" />
+    <text x="48" y="120" font-size="15" font-weight="700" fill="#1e293b">Taxonomy Normalization &amp; Skill Equivalence</text>
+    <text x="64" y="138" font-size="13.5" font-weight="500" fill="#64748b">• Multi-lingual skill resolution reconciling international qualifications</text>
+  </g>
+
+  <!-- Connector 2 -> 3 -->
+  <g transform="translate(330, 340)">
+    <line x1="0" y1="0" x2="0" y2="34" stroke="url(#connGrad)" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <rect x="-95" y="6" width="190" height="22" rx="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" filter="url(#cardShadow)"/>
+    <text x="0" y="21" text-anchor="middle" font-size="11.5" font-weight="600" fill="#475569">Competency Vectors</text>
+  </g>
+
+  <!-- ==================== STAGE 3: FAIR RANKING ENGINE ==================== -->
+  <g id="stage-3" transform="translate(20, 374)">
+    <!-- Card Frame -->
+    <rect x="0" y="0" width="620" height="162" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" filter="url(#cardShadow)"/>
+    <!-- Left Accent Bar -->
+    <path d="M 0 10 Q 0 0 10 0 L 10 0 L 10 162 L 10 162 Q 0 162 0 152 Z" fill="#0d9488" />
+
+    <!-- Header Area -->
+    <rect x="22" y="14" width="70" height="23" rx="4" fill="#f0fdfa" stroke="#ccfbf1" stroke-width="1"/>
+    <text x="57" y="30" text-anchor="middle" font-size="11" font-weight="700" fill="#0f766e">STAGE 03</text>
+    
+    <text x="102" y="32" font-size="17.5" font-weight="700" fill="#0f172a">Fair Ranking &amp; Constrained Optimization</text>
+
+    <rect x="475" y="14" width="123" height="23" rx="11" fill="#f0fdfa" stroke="#ccfbf1" stroke-width="1"/>
+    <text x="536" y="30" text-anchor="middle" font-size="11.5" font-weight="600" fill="#0f766e">Algorithm Core</text>
+
+    <line x1="22" y1="46" x2="600" y2="46" stroke="#f1f5f9" stroke-width="1.2"/>
+
+    <!-- Bullets -->
+    <circle cx="34" cy="67" r="4" fill="#0d9488" />
+    <text x="48" y="72" font-size="15" font-weight="700" fill="#1e293b">Multi-Objective Optimization (Fairness vs. Relevance)</text>
+    <text x="64" y="90" font-size="13.5" font-weight="500" fill="#64748b">• Pareto-optimal re-ranking balancing top-tier match score with fair exposure</text>
+
+    <circle cx="34" cy="118" r="4" fill="#0d9488" />
+    <text x="48" y="123" font-size="15" font-weight="700" fill="#1e293b">Mitigation of Position &amp; Affinity Biases</text>
+    <text x="64" y="141" font-size="13.5" font-weight="500" fill="#64748b">• Mathematical constraints preventing systematic underrepresentation</text>
+  </g>
+
+  <!-- Connector 3 -> 4 -->
+  <g transform="translate(330, 536)">
+    <line x1="0" y1="0" x2="0" y2="34" stroke="url(#connGrad)" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <rect x="-85" y="6" width="170" height="22" rx="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" filter="url(#cardShadow)"/>
+    <text x="0" y="21" text-anchor="middle" font-size="11.5" font-weight="600" fill="#475569">Fair Ranked List</text>
+  </g>
+
+  <!-- ==================== STAGE 4: EXPLAINABLE AI & RECOURSE ==================== -->
+  <g id="stage-4" transform="translate(20, 570)">
+    <!-- Card Frame -->
+    <rect x="0" y="0" width="620" height="152" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" filter="url(#cardShadow)"/>
+    <!-- Left Accent Bar -->
+    <path d="M 0 10 Q 0 0 10 0 L 10 0 L 10 152 L 10 152 Q 0 152 0 142 Z" fill="#ea580c" />
+
+    <!-- Header Area -->
+    <rect x="22" y="14" width="70" height="23" rx="4" fill="#fff7ed" stroke="#ffedd5" stroke-width="1"/>
+    <text x="57" y="30" text-anchor="middle" font-size="11" font-weight="700" fill="#c2410c">STAGE 04</text>
+    
+    <text x="102" y="32" font-size="17.5" font-weight="700" fill="#0f172a">Explainable AI (XAI) &amp; Transparent Recourse</text>
+
+    <rect x="475" y="14" width="123" height="23" rx="11" fill="#fff7ed" stroke="#ffedd5" stroke-width="1"/>
+    <text x="536" y="30" text-anchor="middle" font-size="11.5" font-weight="600" fill="#c2410c">Auditability</text>
+
+    <line x1="22" y1="46" x2="600" y2="46" stroke="#f1f5f9" stroke-width="1.2"/>
+
+    <!-- Bullets -->
+    <circle cx="34" cy="67" r="4" fill="#ea580c" />
+    <text x="48" y="72" font-size="15" font-weight="700" fill="#1e293b">Interpretable Skill Fit Breakdown for Recruiters</text>
+    <text x="64" y="90" font-size="13.5" font-weight="500" fill="#64748b">• White-box match justification mapping candidate experience to required tasks</text>
+
+    <circle cx="34" cy="115" r="4" fill="#ea580c" />
+    <text x="48" y="120" font-size="15" font-weight="700" fill="#1e293b">Algorithmic Recourse &amp; Upskilling Guidance</text>
+    <text x="64" y="138" font-size="13.5" font-weight="500" fill="#64748b">• Transparent feedback to candidates highlighting concrete skill gaps</text>
+  </g>
+
+  <!-- Connector 4 -> 5 -->
+  <g transform="translate(330, 722)">
+    <line x1="0" y1="0" x2="0" y2="34" stroke="url(#connGrad)" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <rect x="-85" y="6" width="170" height="22" rx="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" filter="url(#cardShadow)"/>
+    <text x="0" y="21" text-anchor="middle" font-size="11.5" font-weight="600" fill="#475569">Decision Support</text>
+  </g>
+
+  <!-- ==================== STAGE 5: DIVE JOBMATCH PLATFORM ==================== -->
+  <g id="stage-5" transform="translate(20, 756)">
+    <!-- Card Frame -->
+    <rect x="0" y="0" width="620" height="178" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" filter="url(#cardShadow)"/>
+    <!-- Left Accent Bar -->
+    <path d="M 0 10 Q 0 0 10 0 L 10 0 L 10 178 L 10 178 Q 0 178 0 168 Z" fill="#059669" />
+
+    <!-- Header Area -->
+    <rect x="22" y="14" width="70" height="23" rx="4" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1"/>
+    <text x="57" y="30" text-anchor="middle" font-size="11" font-weight="700" fill="#047857">STAGE 05</text>
+    
+    <text x="102" y="32" font-size="17.5" font-weight="700" fill="#0f172a">DIVE JOBMATCH Platform &amp; HITL</text>
+
+    <rect x="470" y="14" width="128" height="23" rx="11" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1"/>
+    <text x="534" y="30" text-anchor="middle" font-size="11.5" font-weight="600" fill="#047857">Production Portal</text>
+
+    <line x1="22" y1="46" x2="600" y2="46" stroke="#f1f5f9" stroke-width="1.2"/>
+
+    <!-- Bullets -->
+    <circle cx="34" cy="67" r="4" fill="#059669" />
+    <text x="48" y="72" font-size="15" font-weight="700" fill="#1e293b">Human-in-the-Loop (HITL) Governance &amp; EU AI Act</text>
+    <text x="64" y="90" font-size="13.5" font-weight="500" fill="#64748b">• Recruiters retain full decision autonomy; compliance with high-risk AI criteria</text>
+
+    <circle cx="34" cy="113" r="4" fill="#059669" />
+    <text x="48" y="118" font-size="15" font-weight="700" fill="#1e293b">Adaptive Incremental Learning Loops</text>
+    <text x="64" y="136" font-size="13.5" font-weight="500" fill="#64748b">• Online learning updating skill taxonomies without drift or historical bias</text>
+
+    <circle cx="34" cy="158" r="4" fill="#059669" />
+    <text x="48" y="163" font-size="15" font-weight="700" fill="#1e293b">Enterprise &amp; SME Integration <tspan font-size="14" font-weight="400" fill="#64748b">(Secure REST APIs &amp; Modular Architecture)</tspan></text>
+  </g>
+</svg>
