@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="280" height="52" viewBox="0 0 280 52">
+  <style>
+    .name { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 600; fill: #263238; }
+    .addr { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 15px; fill: #546e7a; }
+  </style>
+  <text x="0" y="20" class="name">Dr. Manh Khoi Duong</text>
+  <text x="0" y="44" class="addr">40589 D&#252;sseldorf, Germany</text>
+</svg>
